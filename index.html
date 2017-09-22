@@ -1,16 +1,557 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Materia</title>
+		<title>Старина Чед | Бесплатная доставка еды</title>
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body>
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__inner">
+          <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
+          <div class="logo"></div>
+          <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
+        </div>
 
+        <nav class="page-nav">
+          <ul class="page-nav__list">
+            <li class="page-nav__item"><a class="page-nav__link  page-nav__link--active" href>Главная</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>Магазин</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>О нас</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>FAQ</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="promo-layout">
+        <h2 class="section-title">Промо блок</h2>
+
+        <div class="container">
+          <div class="promo-layout__inner">
+            <h1 class="page-title">Старина Чед</h1>
+            <p class="promo-layout__desc">Кушай, не стесняйся, что как не родной? Бесплатная доставка вкуснейшей еды в Мичуринске.</p>
+            <button class="button" type="button" name="why-elder-btn">Почему Старина Чед?</button>
+          </div>
+
+          <section class="policies">
+            <h2 class="section-title">Преимущества "Старины Чеда"</h2>
+
+            <div class="policie">
+              <div class="policie__icon  policie__icon--free"></div>
+              <p class="policie__title">Бесплатная доставка</p>
+              <p class="policie__desc">на дом или в офис</p>
+            </div>
+
+            <div class="policie">
+              <div class="policie__icon  policie__icon--support"></div>
+              <p class="policie__title">Режим работы</p>
+              <p class="policie__desc">с 14:00 до 02:00</p>
+            </div>
+
+            <div class="policie">
+              <div class="policie__icon  policie__icon--partner"></div>
+              <p class="policie__title">Акции</p>
+              <p class="policie__desc">следите в группе <a class="policie__desc-link" href>Вконтакте</a></p>
+            </div>
+
+            <div class="policie">
+              <div class="policie__icon  policie__icon--contact"></div>
+              <p class="policie__title">Быстрая обратная связь</p>
+              <p class="policie__desc"><a class="policie__desc-link" href="tel:+79158867574">+7 (915) 886-75-74</a></p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="latest-products">
+        <h2 class="section-title">Последние продукты</h2>
+        <h3 class="page-title">Категории продуктов</h3>
+
+        <input type="radio" id="latest-products-all" class="latest-products__input" name="latest-products__toggle" checked>
+        <input type="radio" id="latest-products-pizza" class="latest-products__input" name="latest-products__toggle">
+        <input type="radio" id="latest-products-icecream" class="latest-products__input" name="latest-products__toggle">
+        <input type="radio" id="latest-products-drink" class="latest-products__input" name="latest-products__toggle">
+        <input type="radio" id="latest-products-snack" class="latest-products__input" name="latest-products__toggle">
+
+        <div class="latest-products__filter">
+          <label class="latest-products__label" for="latest-products-all">Все продукты</label>
+          <label class="latest-products__label" for="latest-products-pizza">Пицца</label>
+          <label class="latest-products__label" for="latest-products-icecream">Мороженое</label>
+          <label class="latest-products__label" for="latest-products-drink">Напитки</label>
+          <label class="latest-products__label" for="latest-products-snack">Закуски</label>
+        </div>
+
+        <div class="latest-products__content">
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+
+          <div class="card-product">
+            <p class="card-product__name">BlueBerry</p>
+            <p class="card-product__price">$350.00</p>
+
+            <div class="card-product__bar">
+              <a class="card-product__bar-link" href>О товаре:</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="view-button" href="#">Перейти в магазин</a>
+      </section>
+
+      <section class="sale">
+        <h2 class="section-title">Акции</h2>
+
+        <div class="container">
+          <h3 class="sale__title">Акция на пиццу:</h3>
+          <p class="sale__desc">Стартует вкусная скидка на сентябрь, при заказе 2х пицц и более - скидка 15%</p>
+
+          <div class="sale__inner">
+            <div class="sale__timer">
+              <div class="sale__timer-item">
+                <p class="sale__timer-num">03</p>
+                <p class="sale__timer-name">дня</p>
+              </div>
+
+              <div class="sale__timer-item">
+                <p class="sale__timer-num">22</p>
+                <p class="sale__timer-name">часа</p>
+              </div>
+
+              <div class="sale__timer-item">
+                <p class="sale__timer-num">35</p>
+                <p class="sale__timer-name">минут</p>
+              </div>
+
+              <div class="sale__timer-item">
+                <p class="sale__timer-num">59</p>
+                <p class="sale__timer-name">секунд</p>
+              </div>
+            </div>
+
+            <a class="shop-button" href>Перейти в магазин</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="choose-us">
+        <h3 class="page-title  page-title--fz48">Почему выбирают нас?</h3>
+        <p class="choose-us__desc">Бесплатная доставка еды на дом или в офис! Мы порадуем вас вкуснейшей едой в нужном месте в нужное время!</p>
+
+        <div class="choose-us__content">
+          <div class="choose-us__item">
+            <p class="choose-us__title  choose-us__title--organic">высокое качество</p>
+            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+          </div>
+
+          <div class="choose-us__item">
+            <p class="choose-us__title  choose-us__title--delicious">вкусно</p>
+            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+          </div>
+
+          <div class="choose-us__item">
+            <p class="choose-us__title  choose-us__title--fast">быстро</p>
+            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+          </div>
+
+          <div class="choose-us__item">
+            <p class="choose-us__title  choose-us__title--healthy">полезно</p>
+            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+          </div>
+
+          <div class="choose-us__item">
+            <p class="choose-us__title  choose-us__title--nice">красиво</p>
+            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+          </div>
+
+          <div class="choose-us__item">
+            <p class="choose-us__title  choose-us__title--actually">актуально в любой ситуации</p>
+            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-gallery">
+        <h2 class="section-title">Отзывы</h2>
+
+        <div class="container">
+          <input type="radio" id="reviews-gallery-btn-1" class="reviews-gallery__input" name="reviews-gallery-toggle" checked>
+          <input type="radio" id="reviews-gallery-btn-2" class="reviews-gallery__input" name="reviews-gallery-toggle">
+          <input type="radio" id="reviews-gallery-btn-3" class="reviews-gallery__input" name="reviews-gallery-toggle">
+          <input type="radio" id="reviews-gallery-btn-4" class="reviews-gallery__input" name="reviews-gallery-toggle">
+          <input type="radio" id="reviews-gallery-btn-5" class="reviews-gallery__input" name="reviews-gallery-toggle">
+
+          <div class="reviews-gallery__controller">
+            <label for="reviews-gallery-btn-1" class="reviews-gallery__label">btn-1</label>
+            <label for="reviews-gallery-btn-2" class="reviews-gallery__label">btn-2</label>
+            <label for="reviews-gallery-btn-3" class="reviews-gallery__label">btn-3</label>
+            <label for="reviews-gallery-btn-4" class="reviews-gallery__label">btn-4</label>
+            <label for="reviews-gallery-btn-5" class="reviews-gallery__label">btn-5</label>
+          </div>
+
+          <div class="reviews-gallery__content">
+            <div class="reviews-gallery__item  reviews-gallery__item-1">
+              <p class="reviews-gallery__item-desc">I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
+              <p class="reviews-gallery__item-author"></p>
+              <a class="reviews-gallery__item-vk-link" href>Ссылка VK</a>
+            </div>
+
+            <div class="reviews-gallery__item  reviews-gallery__item-2">
+              <p class="reviews-gallery__item-desc">I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
+              <p class="reviews-gallery__item-author"></p>
+              <a class="reviews-gallery__item-vk-link" href>Ссылка VK</a>
+            </div>
+
+            <div class="reviews-gallery__item  reviews-gallery__item-3">
+              <p class="reviews-gallery__item-desc">I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
+              <p class="reviews-gallery__item-author"></p>
+              <a class="reviews-gallery__item-vk-link" href>Ссылка VK</a>
+            </div>
+
+            <div class="reviews-gallery__item  reviews-gallery__item-4">
+              <p class="reviews-gallery__item-desc">I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
+              <p class="reviews-gallery__item-author"></p>
+              <a class="reviews-gallery__item-vk-link" href>Ссылка VK</a>
+            </div>
+
+            <div class="reviews-gallery__item  reviews-gallery__item-5">
+              <p class="reviews-gallery__item-desc">I rarely write reviews for products but with the EngoCreative, I am more than grateful. The site is fully customizable and you can really feel like playing while designing the site! Thanks again for having made such a convenient, yet fully-functional theme.</p>
+              <p class="reviews-gallery__item-author"></p>
+              <a class="reviews-gallery__item-vk-link" href>Ссылка VK</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-products">
+        <h2 class="section-title">Последние продукты</h2>
+        <h3 class="page-title">Рейтинги продуктов</h3>
+
+        <input type="radio" id="featured-products-popular" class="featured-products__input" name="featured-products__toggle" checked>
+        <input type="radio" id="featured-products-new" class="featured-products__input" name="featured-products__toggle">
+        <input type="radio" id="featured-products-sale" class="featured-products__input" name="featured-products__toggle">
+        <input type="radio" id="featured-products-offer" class="featured-products__input" name="featured-products__toggle">
+
+        <div class="featured-products__filter">
+          <label class="featured-products__label" for="featured-products-popular">Популярные</label>
+          <label class="featured-products__label" for="featured-products-new">Новые</label>
+          <label class="featured-products__label" for="featured-products-sale">Скидки</label>
+          <label class="featured-products__label" for="featured-products-offer">Специальное предложение</label>
+        </div>
+
+        <div class="featured-products__content">
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+
+          <div class="rating-product">
+            <div class="rating-product__image-box">
+              <img src alt>
+            </div>
+
+            <div class="rating-product__inner">
+              <p class="rating-product__name">BlueBerry</p>
+              <p class="rating-product__price">$350.00</p>
+            </div>
+          </div>
+        </div>
+
+        <a class="view-button" href="#">Перейти в магазин</a>
+      </section>
+
+      <section class="reviews-vk">
+        <h2 class="section-title">Отзывы из Вконтакте</h2>
+        <h3 class="page-title">Отзывы из группы Вконтакте:</h3>
+
+        <div class="container">
+          <div class="discussions-vk"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="page-footer__inner-top">
+        <section class="about">
+          <h2 class="section-title">Коротко о нас</h2>
+
+          <p class="footer-title">О нас</p>
+          <p class="footer-text">With more than 15 years of experience we can proudly say that we are one of the best in business, a trusted supplier for more than 1000 companies...</p>
+          <a class="footer-link-read-more" href>Читать дальше</a>
+        </section>
+
+        <section class="information">
+          <h2 class="section-title">Информация</h2>
+
+          <p class="footer-title">Продукты</p>
+          <a class="footer-text" href>Пицца</a>
+          <a class="footer-text" href>Мороженое</a>
+          <a class="footer-text" href>Напитки</a>
+          <a class="footer-text" href>Закуски</a>
+        </section>
+
+        <section class="socials">
+          <h2 class="section-title">Социальные сети</h2>
+
+          <p class="footer-title">Социальные сети</p>
+
+          <div class="socials__content">
+            <a class="socials-item  socials-item--vk" href>Вконтакте</a>
+            <a class="socials-item  socials-item--in" href>Instagram</a>
+            <a class="socials-item  socials-item--tw" href>Twitter</a>
+          </div>
+        </section>
+
+        <section class="callback">
+          <h2 class="section-title">Звонок вам!</h2>
+
+          <p class="footer-title">Мы можем перезвонить вам</p>
+          <p class="footer-text">Оставьте ваш номер телефона и мы перезвоним вам</p>
+
+          <form class="callback-form" action="index.html" method="post">
+            <input type="tel" class="callback-form__input" name="callback-form__phone" placeholder="Введите ваш номер телефона">
+            <button type="callback-button" name="button">Отправить</button>
+          </form>
+        </section>
+      </div>
+      <div class="page-footer__inner-bottom">
+        <div class="container">
+          <a class="copy-text" href="https://vk.com/id154877035">devoloper</a>
+
+          <div class="documents">
+            <a class="copy-text" href>Контакты</a>
+            <a class="copy-text" href>Политика Конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Шаблон карточки последнего продукта с ховером -->
+    <template id="card-product-template" style="display: none">
+      <div class="card-product">
+        <p class="card-product__name"></p>
+        <p class="card-product__price"></p>
+
+        <div class="card-product__bar">
+          <a class="card-product__bar-link" href></a>
+        </div>
+      </div>
+    </template>
+
+    <!-- Шаблон карточки рейтинкового продукта без ховера -->
+    <template id="rating-product-template" style="display: none">
+      <div class="rating-product">
+        <div class="rating-product__image-box">
+          <img src alt>
+        </div>
+
+        <div class="rating-product__inner">
+          <p class="rating-product__name"></p>
+          <p class="rating-product__price"></p>
+        </div>
+      </div>
+    </template>
   </body>
 </html>

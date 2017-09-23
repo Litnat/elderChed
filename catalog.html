@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Старина Чед | Каталог товаров</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <div class="page-header__inner">
+          <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
+          <div class="logo"></div>
+          <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
+        </div>
+
+        <nav class="page-nav">
+          <ul class="page-nav__list">
+            <li class="page-nav__item"><a class="page-nav__link  page-nav__link--active" href>Главная</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>Магазин</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>О нас</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>FAQ</a></li>
+            <li class="page-nav__item"><a class="page-nav__link" href>Контакты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="current-page">
+        <h2 class="section-title">Промо страницы</h2>
+        
+        <div class="container">
+          <h1 class="current-page__title">Каталог товаров</h1>
+
+          <div class="current-page__breadcrumbs">
+            <a class="current-page__breadcrumbs-item" href="/index.html">Главная</a>
+            <a class="current-page__breadcrumbs-item  current-page__breadcrumbs-item--active" href>Каталог товаров</a>
+          </div>
+        </div>
+      </section>
+
+      <div class="container  container--lg">
+        <section class="catalog">
+          <section class="products">
+            <div class="products__header">
+              <button class="products__filter-btn  products__filter-btn--active  products__filter-btn-cards">Фильтр "Вывести карточками"</button>
+              <button class="products__filter-btn  products__filter-btn--columns">Фильтр "Вывести списком с описанием продукта"</button>
+              <p class="products__number-of">Показано 1-10 из 50 по результату</p>
+            </div>
+
+            <div class="products__content">
+              <div class="card-product">
+                <p class="card-product__name">BlueBerry</p>
+                <p class="card-product__price">$350.00</p>
+
+                <div class="card-product__bar">
+                  <a class="card-product__bar-link" href>О товаре</a>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <p class="card-product__name">BlueBerry</p>
+                <p class="card-product__price">$350.00</p>
+
+                <div class="card-product__bar">
+                  <a class="card-product__bar-link" href>О товаре</a>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <p class="card-product__name">BlueBerry</p>
+                <p class="card-product__price">$350.00</p>
+
+                <div class="card-product__bar">
+                  <a class="card-product__bar-link" href>О товаре</a>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <p class="card-product__name">BlueBerry</p>
+                <p class="card-product__price">$350.00</p>
+
+                <div class="card-product__bar">
+                  <a class="card-product__bar-link" href>О товаре</a>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <p class="card-product__name">BlueBerry</p>
+                <p class="card-product__price">$350.00</p>
+
+                <div class="card-product__bar">
+                  <a class="card-product__bar-link" href>О товаре</a>
+                </div>
+              </div>
+
+              <div class="card-product">
+                <p class="card-product__name">BlueBerry</p>
+                <p class="card-product__price">$350.00</p>
+
+                <div class="card-product__bar">
+                  <a class="card-product__bar-link" href>О товаре</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="products__paginator">
+              <button>Назад</button>
+
+              <div class="products__paginator-list">
+                <a class="products__paginator-item  products__paginator-item--active" href>1</a>
+                <a class="products__paginator-item" href>2</a>
+                <a class="products__paginator-item" href>3</a>
+                <a class="products__paginator-item" href>4</a>
+                <a class="products__paginator-item" href>5</a>
+                <a class="products__paginator-item" href>6</a>
+              </div>
+
+              <button>Вперёд</button>
+            </div>
+          </section>
+
+          <section class="catalog__controlls">
+            <div class="catalog__item  catalog__item--border-bottom  categories">
+              <h3 class="catalog__controlls-title">Категории</h3>
+
+              <div class="categories__list">
+                <a class="categories__item  categories__item--active" href>Все</a>
+                <a class="categories__item" href>Пицца</a>
+                <a class="categories__item" href>Бургеры</a>
+                <a class="categories__item" href>Напитки</a>
+                <a class="categories__item" href>Мороженое</a>
+                <a class="categories__item" href>Закуски</a>
+              </div>
+            </div>
+
+            <div class="catalog__item  catalog__item--border-bottom  controll-price">
+              <h3 class="catalog__controlls-title">Цена</h3>
+
+              <form class="controll-price__form" action="#" method="#">
+                <input type="range" class="controll-price__input">
+                <span class="controll-price__bounds">0 руб. - 400 руб.</span>
+                <button class="controll-price__button">Фильтровать</button>
+              </form>
+            </div>
+
+            <div class="catalog__item rated-products">
+              <h3 class="catalog__controlls-title">Топ рейтинговых продуктов</h3>
+
+              <div class="rated-products__list">
+                <div class="rated-product">
+                  <div class="top-rated-product">
+                    <div class="top-rated-product__image-box">
+                      <img class="top-rated-product__img" src alt>
+                    </div>
+
+                    <div class="top-rated-product__info">
+                      <p class="top-rated-product__info-title">Kiwi Anerican</p>
+                      <p class="top-rated-product__info-price">$350.00</p>
+                      <div class="top-rated-product__info-star  star">
+                        <span class="star__item"></span>
+                        <span class="star__item"></span>
+                        <span class="star__item"></span>
+                        <span class="star__item"></span>
+                        <span class="star__item"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <div class="page-footer__inner-top">
+        <section class="about">
+          <h2 class="section-title">Коротко о нас</h2>
+
+          <p class="footer-title">О нас</p>
+          <p class="footer-text">With more than 15 years of experience we can proudly say that we are one of the best in business, a trusted supplier for more than 1000 companies...</p>
+          <a class="footer-link-read-more" href>Читать дальше</a>
+        </section>
+
+        <section class="information">
+          <h2 class="section-title">Информация</h2>
+
+          <p class="footer-title">Продукты</p>
+          <a class="footer-text" href>Пицца</a>
+          <a class="footer-text" href>Мороженое</a>
+          <a class="footer-text" href>Напитки</a>
+          <a class="footer-text" href>Закуски</a>
+        </section>
+
+        <section class="socials">
+          <h2 class="section-title">Социальные сети</h2>
+
+          <p class="footer-title">Социальные сети</p>
+
+          <div class="socials__content">
+            <a class="socials-item  socials-item--vk" href>Вконтакте</a>
+            <a class="socials-item  socials-item--in" href>Instagram</a>
+            <a class="socials-item  socials-item--tw" href>Twitter</a>
+          </div>
+        </section>
+
+        <section class="callback">
+          <h2 class="section-title">Звонок вам!</h2>
+
+          <p class="footer-title">Мы можем перезвонить вам</p>
+          <p class="footer-text">Оставьте ваш номер телефона и мы перезвоним вам</p>
+
+          <form class="callback-form" action="index.html" method="post">
+            <input type="tel" class="callback-form__input" name="callback-form__phone" placeholder="Введите ваш номер телефона">
+            <button type="callback-button" name="button">Отправить</button>
+          </form>
+        </section>
+      </div>
+      <div class="page-footer__inner-bottom">
+        <div class="container">
+          <a class="copy-text" href="https://vk.com/id154877035">devoloper</a>
+
+          <div class="documents">
+            <a class="copy-text" href>Контакты</a>
+            <a class="copy-text" href>Политика Конфиденциальности</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Шаблон карточки продукта фильтр-1 -->
+    <template id="card-product-template" style="display: none">
+      <div class="card-product">
+        <p class="card-product__name"></p>
+        <p class="card-product__price"></p>
+
+        <div class="card-product__bar">
+          <a class="card-product__bar-link" href></a>
+        </div>
+      </div>
+    </template>
+
+    <!-- Шаблон карточки продукта фильтр-2 -->
+    <template id="card-product-full-template" style="display: none">
+      <div class="card-product-full">
+        <div class="card-product-full__image-box">
+          <img class="card-product-full__img" src alt>
+        </div>
+
+        <div class="card-product-full__info">
+          <p class="card-product-full__info-title"></p>
+
+          <div class="card-product-full__info-stars">
+            <span class="card-product-full__info-stars-item"></span>
+          </div>
+
+          <p class="card-product-full__info-desc"></p>
+
+          <div class="card-product-full__info-buttons">
+            <button class="card-product-full__info-button"></button>
+          </div>
+
+          <div class="card-product-full__info-socials">
+            <p class="card-product-full__info-socials-title">Репостнуть в социальную сеть:</p>
+
+            <span class="card-product-full__info-socials-item  card-product-full__info-socials-item--vk"></span>
+            <span class="card-product-full__info-socials-item  card-product-full__info-socials-item--inst"></span>
+            <span class="card-product-full__info-socials-item  card-product-full__info-socials--tw"></span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Шаблон карточек "Топ рейтинговых продуктов" -->
+    <template id="top-rated-product-template" style="display: none">
+      <div class="top-rated-product">
+        <div class="top-rated-product__image-box">
+          <img class="top-rated-product__img" src alt>
+        </div>
+
+        <div class="top-rated-product__info">
+          <p class="top-rated-product__info-title"></p>
+          <p class="top-rated-product__info-price"></p>
+          <div class="top-rated-product__info-star  star">
+            <span class="star__item"></span>
+          </div>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

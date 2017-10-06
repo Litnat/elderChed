@@ -1,0 +1,23 @@
+.button {
+  padding: 10px 38px;
+  border: 1px solid #80b435;
+
+  font-family: 'RobotoSlab';
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+
+  background-color: #80b435;
+  cursor: pointer;
+
+  transition: all .3s;
+
+  #{&}:hover {
+    background-color: #fff;
+    color: #80b435;
+  }
+
+  #{&}:active {
+    opacity: .7;
+  }
+}

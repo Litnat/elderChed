@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="fonts/Roboto.ttf" as="font">
+    <link rel="preload" href="fonts/RobotoSlab.ttf" as="font">
   </head>
 
   <body>
@@ -15,8 +17,8 @@
       <div class="container">
         <div class="page-header__inner">
           <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
-          <div class="logo"></div>
-          <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
+          <a class="logo" href>Стариа Чед</a>
+          <a class="phone-number  phone-number--reverse-icon" href="tel:+79158867574">+7 (915) 886-75-74</a>
         </div>
 
         <nav class="page-nav">
@@ -38,6 +40,8 @@
         <div class="container">
           <div class="promo-layout__inner">
             <h1 class="page-title">Старина Чед</h1>
+
+            <div class="promo-layout__logo"></div>
             <p class="promo-layout__desc">Кушай, не стесняйся, что как не родной? Бесплатная доставка вкуснейшей еды в Мичуринске.</p>
             <button class="button" type="button" name="why-elder-btn">Почему Старина Чед?</button>
           </div>
@@ -221,38 +225,40 @@
       </section>
 
       <section class="choose-us">
-        <h3 class="page-title  page-title--fz48">Почему выбирают нас?</h3>
-        <p class="choose-us__desc">Бесплатная доставка еды на дом или в офис! Мы порадуем вас вкуснейшей едой в нужном месте в нужное время!</p>
+        <div class="container">
+          <h3 class="page-title  page-title--fz48">Почему выбирают нас?</h3>
+          <p class="choose-us__desc">Бесплатная доставка еды на дом или в офис! Мы порадуем вас вкуснейшей едой в нужном месте в нужное время!</p>
 
-        <div class="choose-us__content">
-          <div class="choose-us__item">
-            <p class="choose-us__title  choose-us__title--organic">высокое качество</p>
-            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
-          </div>
+          <div class="choose-us__content">
+            <div class="choose-us__item">
+              <p class="choose-us__title  choose-us__title--organic">высокое качество</p>
+              <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            </div>
 
-          <div class="choose-us__item">
-            <p class="choose-us__title  choose-us__title--delicious">вкусно</p>
-            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
-          </div>
+            <div class="choose-us__item">
+              <p class="choose-us__title  choose-us__title--delicious">вкусно</p>
+              <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            </div>
 
-          <div class="choose-us__item">
-            <p class="choose-us__title  choose-us__title--fast">быстро</p>
-            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
-          </div>
+            <div class="choose-us__item">
+              <p class="choose-us__title  choose-us__title--fast">быстро</p>
+              <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            </div>
 
-          <div class="choose-us__item">
-            <p class="choose-us__title  choose-us__title--healthy">полезно</p>
-            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
-          </div>
+            <div class="choose-us__item">
+              <p class="choose-us__title  choose-us__title--healthy">полезно</p>
+              <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            </div>
 
-          <div class="choose-us__item">
-            <p class="choose-us__title  choose-us__title--nice">красиво</p>
-            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
-          </div>
+            <div class="choose-us__item">
+              <p class="choose-us__title  choose-us__title--nice">красиво</p>
+              <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            </div>
 
-          <div class="choose-us__item">
-            <p class="choose-us__title  choose-us__title--actually">актуально в любой ситуации</p>
-            <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            <div class="choose-us__item">
+              <p class="choose-us__title  choose-us__title--actually">актуально в любой ситуации</p>
+              <p class="choose-us__desc">Suspendisse ultricies nisi vel quam suscipit, et rutrum odio porttitor.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -309,164 +315,166 @@
         </div>
       </section>
 
-      <section class="featured-products">
-        <h2 class="section-title">Последние продукты</h2>
-        <h3 class="page-title">Рейтинги продуктов</h3>
+      <div class="container">
+        <section class="featured-products">
+          <h2 class="section-title">Последние продукты</h2>
+          <h3 class="page-title">Рейтинги продуктов</h3>
 
-        <input type="radio" id="featured-products-popular" class="featured-products__input" name="featured-products__toggle" checked>
-        <input type="radio" id="featured-products-new" class="featured-products__input" name="featured-products__toggle">
-        <input type="radio" id="featured-products-sale" class="featured-products__input" name="featured-products__toggle">
-        <input type="radio" id="featured-products-offer" class="featured-products__input" name="featured-products__toggle">
+          <input type="radio" id="featured-products-popular" class="featured-products__input" name="featured-products__toggle" checked>
+          <input type="radio" id="featured-products-new" class="featured-products__input" name="featured-products__toggle">
+          <input type="radio" id="featured-products-sale" class="featured-products__input" name="featured-products__toggle">
+          <input type="radio" id="featured-products-offer" class="featured-products__input" name="featured-products__toggle">
 
-        <div class="featured-products__filter">
-          <label class="featured-products__label" for="featured-products-popular">Популярные</label>
-          <label class="featured-products__label" for="featured-products-new">Новые</label>
-          <label class="featured-products__label" for="featured-products-sale">Скидки</label>
-          <label class="featured-products__label" for="featured-products-offer">Специальное предложение</label>
-        </div>
+          <div class="featured-products__filter">
+            <label class="featured-products__label" for="featured-products-popular">Популярные</label>
+            <label class="featured-products__label" for="featured-products-new">Новые</label>
+            <label class="featured-products__label" for="featured-products-sale">Скидки</label>
+            <label class="featured-products__label" for="featured-products-offer">Специальное предложение</label>
+          </div>
 
-        <div class="featured-products__content">
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
+          <div class="featured-products__content">
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
             </div>
 
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
+            </div>
+
+            <div class="rating-product">
+              <div class="rating-product__image-box">
+                <img src alt>
+              </div>
+
+              <div class="rating-product__inner">
+                <p class="rating-product__name">BlueBerry</p>
+                <p class="rating-product__price">$350.00</p>
+              </div>
             </div>
           </div>
 
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-
-          <div class="rating-product">
-            <div class="rating-product__image-box">
-              <img src alt>
-            </div>
-
-            <div class="rating-product__inner">
-              <p class="rating-product__name">BlueBerry</p>
-              <p class="rating-product__price">$350.00</p>
-            </div>
-          </div>
-        </div>
-
-        <a class="view-button" href="#">Перейти в магазин</a>
-      </section>
+          <a class="view-button" href="#">Перейти в магазин</a>
+        </section>
+      </div>
 
       <section class="reviews-vk">
         <h2 class="section-title">Отзывы из Вконтакте</h2>
-        <h3 class="page-title">Отзывы из группы Вконтакте:</h3>
-
         <div class="container">
+          <h3 class="page-title">Отзывы из группы Вконтакте:</h3>
+
           <div class="discussions-vk"></div>
         </div>
       </section>
@@ -474,47 +482,49 @@
 
     <footer class="page-footer">
       <div class="page-footer__inner-top">
-        <section class="about">
-          <h2 class="section-title">Коротко о нас</h2>
+        <div class="container">
+          <section class="about">
+            <h2 class="section-title">Коротко о нас</h2>
 
-          <p class="page-footer__title">О нас</p>
-          <p class="page-footer__text">With more than 15 years of experience we can proudly say that we are one of the best in business, a trusted supplier for more than 1000 companies...</p>
-          <a class="page-footer__link-read-more" href>Читать дальше</a>
-        </section>
+            <p class="page-footer__title">О нас</p>
+            <p class="page-footer__text">With more than 15 years of experience we can proudly say that we are one of the best in business, a trusted supplier for more than 1000 companies...</p>
+            <a class="page-footer__link-read-more" href>Читать дальше</a>
+          </section>
 
-        <section class="information">
-          <h2 class="section-title">Информация</h2>
+          <section class="information">
+            <h2 class="section-title">Информация</h2>
 
-          <p class="page-footer__title">Продукты</p>
-          <a class="page-footer__text" href>Пицца</a>
-          <a class="page-footer__text" href>Мороженое</a>
-          <a class="page-footer__text" href>Напитки</a>
-          <a class="page-footer__text" href>Закуски</a>
-        </section>
+            <p class="page-footer__title">Продукты</p>
+            <a class="page-footer__text" href>Пицца</a>
+            <a class="page-footer__text" href>Мороженое</a>
+            <a class="page-footer__text" href>Напитки</a>
+            <a class="page-footer__text" href>Закуски</a>
+          </section>
 
-        <section class="socials">
-          <h2 class="section-title">Социальные сети</h2>
+          <section class="socials">
+            <h2 class="section-title">Социальные сети</h2>
 
-          <p class="page-footer__title">Социальные сети</p>
+            <p class="page-footer__title">Социальные сети</p>
 
-          <div class="socials__content">
-            <a class="socials-item  socials-item--vk" href>Вконтакте</a>
-            <a class="socials-item  socials-item--in" href>Instagram</a>
-            <a class="socials-item  socials-item--tw" href>Twitter</a>
-          </div>
-        </section>
+            <div class="socials__content">
+              <a class="socials-item  socials-item--vk" href>Вконтакте</a>
+              <a class="socials-item  socials-item--in" href>Instagram</a>
+              <a class="socials-item  socials-item--tw" href>Twitter</a>
+            </div>
+          </section>
 
-        <section class="callback">
-          <h2 class="section-title">Звонок вам!</h2>
+          <section class="callback">
+            <h2 class="section-title">Звонок вам!</h2>
 
-          <p class="page-footer__title">Мы можем перезвонить вам</p>
-          <p class="page-footer__text">Оставьте ваш номер телефона и мы перезвоним вам</p>
+            <p class="page-footer__title">Мы можем перезвонить вам</p>
+            <p class="page-footer__text">Оставьте ваш номер телефона и мы перезвоним вам</p>
 
-          <form class="callback-form" action="index.html" method="post">
-            <input type="tel" class="callback-form__input" name="callback-form__phone" placeholder="Введите ваш номер телефона">
-            <button type="callback-button" name="button">Отправить</button>
-          </form>
-        </section>
+            <form class="callback-form" action="index.html" method="post">
+              <input type="tel" class="callback-form__input" name="callback-form__phone" placeholder="Введите ваш номер телефона">
+              <button type="callback-button" name="button">Отправить</button>
+            </form>
+          </section>
+        </div>
       </div>
       <div class="page-footer__inner-bottom">
         <div class="container">

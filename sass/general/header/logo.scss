@@ -1,0 +1,18 @@
+.logo {
+  display: block;
+  width: 256px;
+  height: 55px;
+
+  font-size: 0;
+
+  background: url('../img/header-logo.png') no-repeat;
+  transition: opacity .3s;
+
+  #{&}:hover {
+    opacity: .7;
+  }
+
+  #{&}:active {
+    opacity: .5;
+  }
+}

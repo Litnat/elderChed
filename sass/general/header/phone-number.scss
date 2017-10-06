@@ -1,0 +1,43 @@
+.phone-number {
+  position: relative;
+  padding-left: 22px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 900;
+
+  color: #80b435;
+  text-decoration: none;
+  transition: opacity .3s;
+
+  #{&}::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    margin: auto 0;
+    background: url('../img/icon-phone.png') no-repeat;
+  }
+
+  #{&}:hover {
+    opacity: .8;
+  }
+
+  #{&}:active {
+    opacity: .6;
+  }
+}
+
+.phone-number--reverse-icon {
+  padding-left: 0;
+  padding-right: 22px;
+
+  #{&}::before {
+    left: auto;
+    right: 0;
+    transform: rotate(-90deg);
+  }
+}

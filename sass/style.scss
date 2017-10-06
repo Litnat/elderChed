@@ -1,2 +1,22 @@
-@import "global/section-title";
+/* Загрузка глобальных стилей */
+// код
+
+/* Загрузка основных стилей header'a */
 @import "general/header/logo";
+@import "general/header/page-header";
+@import "general/header/page-nav";
+@import "general/header/phone-number";
+
+/* Загрузка основных стилей main'a */
+@import "general/main/section-title";
+@import "general/main/choose-us";
+@import "general/main/current-page";
+
+/* Загрузка основных стилей footer'a */
+@import "general/footer/about";
+@import "general/footer/callback-button";
+@import "general/footer/callback-form";
+@import "general/footer/copy-text";
+@import "general/footer/page-footer";
+@import "general/footer/socials-item";
+@import "general/footer/socials";

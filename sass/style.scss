@@ -1,5 +1,5 @@
 /* Загрузка глобальных стилей */
-// код
+@import "global/container";
 
 /* Загрузка основных стилей header'a */
 @import "general/header/logo";
@@ -7,10 +7,52 @@
 @import "general/header/page-nav";
 @import "general/header/phone-number";
 
+
 /* Загрузка основных стилей main'a */
 @import "general/main/section-title";
 @import "general/main/choose-us";
 @import "general/main/current-page";
+
+  /* Загрузка дополнительных стилей страницы index секции main */
+  @import "pages/index/button";
+  @import "pages/index/featured-products";
+  @import "pages/index/information";
+  @import "pages/index/latest-products";
+  @import "pages/index/page-content";
+  @import "pages/index/page-title";
+  @import "pages/index/policies";
+  @import "pages/index/promo-layout";
+  @import "pages/index/reviews-gallery";
+  @import "pages/index/reviews-vk";
+  @import "pages/index/sale";
+  @import "pages/index/view-button";
+
+  /* Загрузка дополнительных стилей страницы catalog секции main */
+  @import "pages/catalog/catalog";
+  @import "pages/catalog/categories";
+  @import "pages/catalog/controll-price";
+  @import "pages/catalog/products";
+  @import "pages/catalog/star";
+
+  /* Загрузка дополнительных стилей страницы about секции main */
+  @import "pages/about/about";
+  @import "pages/about/family";
+  @import "pages/about/history";
+  @import "pages/about/online-story";
+
+  /* Загрузка дополнительных стилей страницы contacts секции main */
+  @import "pages/contacts/contacts-list";
+  @import "pages/contacts/map";
+
+  /* Загрузка дополнительных стилей страницы 404-page секции main */
+  @import "pages/404-page/error";
+
+  /* Загрузка дополнительных стилей страницы faq секции main */
+  @import "pages/faq/faq";
+
+  /* Загрузка дополнительных стилей страницы popup секции main */
+  @import "pages/popup/popup-subscribe";
+
 
 /* Загрузка основных стилей footer'a */
 @import "general/footer/about";

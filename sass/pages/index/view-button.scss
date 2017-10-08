@@ -1,0 +1,19 @@
+.view-button {
+	padding: 10px 50px;
+	font-size: 14px;
+	font-family: 'RobotoSlab';
+	text-transform: uppercase;
+	border: 1px solid $color-green;
+	color: $color-green;
+	transition: all .3s;
+	text-decoration: none;
+
+	#{&}:hover {
+		color: $color-white;
+		background-color: $color-green;
+	}
+
+	#{&}:active {
+		opacity: .8;
+	}
+}

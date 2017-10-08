@@ -1,0 +1,77 @@
+.policies {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	background-color: $color-white;
+
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	bottom: -74px;
+
+  box-shadow: $default-box-shadow;
+}
+
+.policie {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 292px;
+	padding: 35px 0;
+}
+
+.policie__icon {
+	background: transparent url('../img/icon-policies.png') no-repeat;
+	margin-bottom: 10px;
+}
+
+.policie__icon--free {
+	width: 44px;
+  height: 35px;
+  background-position: -5px -5px;
+}
+
+.policie__icon--support {
+	width: 50px;
+  height: 44px;
+  background-position: -5px -50px;
+}
+
+.policie__icon--partner {
+	width: 46px;
+  height: 42px;
+  background-position: -65px -5px;
+}
+
+.policie__icon--contact {
+	width: 36px;
+  height: 36px;
+  background-position: -65px -57px;
+}
+
+.policie__title {
+	margin: 0 0 5px 0;
+
+	font-size: 14px;
+	font-weight: 900;
+
+	color: $color-default-text;
+	text-transform: uppercase;
+}
+
+.policie__desc {
+	margin: 0;
+
+	font-size: 12px;
+
+	color: $color-default-text;
+	text-transform: uppercase;
+
+	opacity: .6;
+}
+
+.policie__desc-link {
+	color: $color-green;
+}

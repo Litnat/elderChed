@@ -1,0 +1,65 @@
+.sale {
+	background-color: #d7d7d7;
+	padding: 120px 95px;
+}
+
+.sale__title {
+	margin: 0 0 10px 0;
+	max-width: 670px;
+	font-size: 42px;
+	font-weight: 100;
+	color: $color-green;
+	text-transform: uppercase;
+}
+
+.sale__desc {
+	margin: 0 0 20px 0;
+	max-width: 670px;
+	font-size: 20px;
+	line-height: 1.3;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.sale__inner-text {
+	max-width: 670px;
+	padding-right: 100px;
+	margin-left: auto;
+} 
+
+.sale__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	padding-right: 100px;
+}
+
+.sale__timer {
+	display: grid;
+	grid-template-columns: repeat(4, 165px);
+	justify-content: flex-end;
+	background-color: #fff;
+	box-shadow: $default-box-shadow;
+	max-width: 770px;
+	width: 100%;
+}
+
+.sale__timer-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 0;
+}
+
+.sale__timer-num {
+	margin: 0;
+	font-size: 48px;
+	color: $color-green;
+	font-weight: 100;
+}
+
+.sale__timer-name {
+	margin: 0;
+	font-size: 14px;
+	text-transform: uppercase;
+}

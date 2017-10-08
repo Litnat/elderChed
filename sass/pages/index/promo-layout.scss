@@ -1,5 +1,6 @@
 .promo-layout {
   background-color: #2b2b2b;
+  margin-bottom: 145px;
 }
 
 .promo-layout__inner {
@@ -7,6 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding: 50px 0 170px 0;
 }
 
 .promo-layout__logo {
@@ -16,6 +19,7 @@
 }
 
 .promo-layout__desc {
+  margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
 }

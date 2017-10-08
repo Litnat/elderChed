@@ -1,4 +1,5 @@
 /* Загрузка глобальных стилей */
+@import "global/variables.scss";
 @import "global/fonts";
 @import "global/container";
 
@@ -63,3 +64,10 @@
 @import "general/footer/page-footer";
 @import "general/footer/socials-item";
 @import "general/footer/socials";
+
+/* Подгрузка стилей шаблона */
+@import "general/templates/card-product";
+@import "general/templates/card-product-full";
+@import "general/templates/produce";
+@import "general/templates/rating-product";
+@import "general/templates/top-rated-product";

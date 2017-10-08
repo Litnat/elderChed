@@ -1,0 +1,66 @@
+.latest-products {
+	position: relative;
+	margin-bottom: 70px;
+}
+
+.latest-products__input {
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.latest-products__filter {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+
+	margin-bottom: 55px;
+}
+
+.latest-products__label {
+	padding-right: 35px;
+
+	font-size: 16px;
+	color: $color-default-text;
+	text-transform: uppercase;
+	font-weight: 900;
+
+	cursor: pointer;
+
+	#{&}:last-child {
+		padding-right: 0;
+	}
+}
+
+#latest-products-all:checked ~ .latest-products__filter .latest-products__label:nth-child(1) {
+	color: $color-green;
+}
+
+#latest-products-pizza:checked ~ .latest-products__filter .latest-products__label:nth-child(2) {
+	color: $color-green;
+}
+
+#latest-products-icecream:checked ~ .latest-products__filter .latest-products__label:nth-child(3) {
+	color: $color-green;
+}
+
+#latest-products-drink:checked ~ .latest-products__filter .latest-products__label:nth-child(4) {
+	color: $color-green;
+}
+
+#latest-products-snack:checked ~ .latest-products__filter .latest-products__label:nth-child(5) {
+	color: $color-green;
+}
+
+.latest-products__content {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 350px);
+	grid-gap: 30px;
+	justify-content: center;
+	margin-bottom: 60px;
+}
+
+.latest-products__inner {
+	margin: 0 auto;
+	text-align: center;
+}

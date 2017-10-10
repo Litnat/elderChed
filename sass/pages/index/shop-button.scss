@@ -1,0 +1,19 @@
+.shop-button {
+	padding: 10px 50px;
+	font-size: 14px;
+	font-family: 'RobotoSlab';
+	text-transform: uppercase;
+	border: 1px solid $color-green;
+	color: $color-white;
+	transition: all .3s;
+	text-decoration: none;
+  background-color: $color-green;
+
+	#{&}:hover {
+    opacity: .7;
+	}
+
+	#{&}:active {
+		opacity: .5;
+	}
+}

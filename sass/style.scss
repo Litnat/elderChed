@@ -1,5 +1,5 @@
 /* Загрузка глобальных стилей */
-@import "global/variables.scss";
+@import "global/variables";
 @import "global/fonts";
 @import "global/container";
 
@@ -28,6 +28,7 @@
   @import "pages/index/reviews-vk";
   @import "pages/index/sale";
   @import "pages/index/view-button";
+  @import "pages/index/shop-button";
 
   /* Загрузка дополнительных стилей страницы catalog секции main */
   @import "pages/catalog/catalog";

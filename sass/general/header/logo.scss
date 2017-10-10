@@ -15,4 +15,8 @@
   #{&}:active {
     opacity: .5;
   }
+
+  @media #{$mobile} {
+    margin: 7px 0 0 0;
+  }
 }

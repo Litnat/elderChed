@@ -15,6 +15,11 @@
 	flex-wrap: wrap;
 
 	margin-bottom: 55px;
+
+	@media #{$mobile-book} {
+		flex-direction: column;
+		margin-bottom: 25px;
+	}
 }
 
 .latest-products__label {
@@ -29,6 +34,16 @@
 
 	#{&}:last-child {
 		padding-right: 0;
+	}
+
+	@media #{$mobile} {
+		padding-right: 27px;
+	}
+
+	@media #{$mobile-book} {
+		padding: 0;
+		text-align: center;
+		padding-bottom: 5px;
 	}
 }
 
@@ -58,6 +73,11 @@
 	grid-gap: 30px;
 	justify-content: center;
 	margin-bottom: 60px;
+
+	@media #{$mobile-book} {
+		grid-template-columns: repeat(auto-fit, 100%);
+		padding: 0 15px;
+	}
 }
 
 .latest-products__inner {

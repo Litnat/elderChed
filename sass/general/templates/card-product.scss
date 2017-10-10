@@ -8,6 +8,11 @@
 	background-color: #f7f7f7;
 	box-shadow: $default-box-shadow;
 	transition: all .3s;
+
+	@media #{$mobile-book} {
+		width: 100%;
+		height: 240px;
+	}
 }
 
 .card-product__name {

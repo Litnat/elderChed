@@ -1,6 +1,14 @@
 .promo-layout {
   background-color: #2b2b2b;
   margin-bottom: 145px;
+
+  @media #{$tablet} {
+    margin-bottom: 50px;
+	}
+
+  @media #{$tablet} {
+    margin-bottom: 25px;
+	}
 }
 
 .promo-layout__inner {
@@ -10,16 +18,36 @@
   align-items: center;
 
   padding: 50px 0 170px 0;
+
+  @media #{$tablet} {
+    padding-top: 0;
+		padding-bottom: 60px;
+	}
+
+  @media #{$mobile-book} {
+    padding-top: 0;
+		padding-bottom: 45px;
+	}
 }
 
 .promo-layout__logo {
   width: 380px;
   height: 330px;
   background: url('../img/starinached-logo.svg') no-repeat;
+
+  @media #{$mobile-book} {
+    width: 300px;
+    height: 260px;
+    background-size: cover;
+	}
 }
 
 .promo-layout__desc {
   margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
+
+  @media #{$mobile-book} {
+    text-align: center;
+	}
 }

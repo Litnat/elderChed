@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'Roboto';
-  src: url('../fonts/Roboto.ttf');
+  src: url('../fonts/Roboto.ttf'), local('Roboto');
 }
 
 @font-face {
-  font-family: 'RobotoSlab';
-  src: url('../fonts/RobotoSlab.ttf');
+  font-family: 'Roboto Slab';
+  src: url('../fonts/RobotoSlab.ttf'), local('Roboto Slab');
 }
 
 body {
-  font-family: 'RobotoSlab';
+  font-family: 'Roboto Slab';
 }

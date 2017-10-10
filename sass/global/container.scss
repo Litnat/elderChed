@@ -2,5 +2,15 @@
 	position: relative;
   width: 100%;
   max-width: 1170px;
+	padding: 0 30px;
   margin: 0 auto;
+
+	@media #{$desctop} {
+		width: calc(100% - 60px);
+	}
+
+	@media #{$tablet} {
+		padding: 0 15px;
+		width: calc(100% - 30px);
+	}
 }

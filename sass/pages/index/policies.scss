@@ -12,6 +12,22 @@
 	bottom: -74px;
 
   box-shadow: $default-box-shadow;
+
+	@media #{$tablet} {
+		position: static;
+		flex-wrap: wrap;
+		margin-left: -15px;
+		width: calc(100% + 30px);
+	}
+
+	@media #{$mobile} {
+    padding: 0 15px;
+    width: 100%;
+	}
+
+	@media #{$mobile-book} {
+    flex-direction: column;
+	}
 }
 
 .policie {
@@ -20,6 +36,18 @@
 	align-items: center;
 	width: 292px;
 	padding: 35px 0;
+
+	@media #{$tablet} {
+		width: 50%;
+	}
+
+	@media #{$mobile} {
+		padding: 25px 0;
+	}
+
+	@media #{$mobile-book} {
+    width: 100%;
+	}
 }
 
 .policie__icon {
@@ -59,6 +87,10 @@
 
 	color: $color-default-text;
 	text-transform: uppercase;
+
+	@media #{$tablet} {
+		text-align: center;
+	}
 }
 
 .policie__desc {
@@ -70,8 +102,16 @@
 	text-transform: uppercase;
 
 	opacity: .6;
+
+	@media #{$tablet} {
+		text-align: center;
+	}
 }
 
 .policie__desc-link {
 	color: $color-green;
+
+	@media #{$tablet} {
+		text-align: center;
+	}
 }

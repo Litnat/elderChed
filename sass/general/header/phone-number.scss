@@ -41,3 +41,9 @@
     transform: rotate(-90deg);
   }
 }
+
+@media #{$mobile} {
+  .page-header__inner .phone-number--reverse-icon {
+    display: none;
+  }
+}

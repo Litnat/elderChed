@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* Загрузка глобальных стилей */
 /* colors */
+/* box-shadow */
 /* width device */
 @font-face {
   font-family: 'Roboto';
@@ -170,6 +171,110 @@ body {
 .section-title {
   display: none; }
 
+.choose-us__title {
+  position: relative;
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  color: #80b435; }
+  .choose-us__title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-image: url("../img/icon-choose-us.png");
+    background-repeat: no-repeat; }
+
+.choose-us__desc {
+  margin: 0;
+  font-size: 14px;
+  color: #666666;
+  line-height: 24px; }
+
+.choose-us__content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 115px; }
+  @media screen and (max-width: 414px) {
+    .choose-us__content {
+      flex-direction: column;
+      margin-top: 35px; } }
+  .choose-us__content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+    max-width: 435px;
+    height: 100%;
+    background: url("../img/garantiay.png") no-repeat;
+    background-size: contain; }
+    @media screen and (max-width: 900px) {
+      .choose-us__content::before {
+        display: none; } }
+
+.choose-us__item {
+  max-width: 300px;
+  margin-bottom: 90px; }
+  @media screen and (max-width: 414px) {
+    .choose-us__item {
+      max-width: 100%;
+      margin-bottom: 20px; } }
+
+.choose-us__item--tar {
+  text-align: right; }
+
+.choose-us__title--organic {
+  padding-left: 50px; }
+  .choose-us__title--organic::before {
+    width: 34px;
+    height: 38px;
+    background-position: -5px -5px; }
+
+.choose-us__title--delicious {
+  padding-left: 50px; }
+  .choose-us__title--delicious::before {
+    width: 33px;
+    height: 35px;
+    background-position: -49px -5px; }
+
+.choose-us__title--fast {
+  padding-left: 50px; }
+  .choose-us__title--fast::before {
+    width: 34px;
+    height: 35px;
+    background-position: -49px -50px; }
+
+.choose-us__title--healthy {
+  padding-right: 50px; }
+  .choose-us__title--healthy::before {
+    left: auto;
+    right: 0;
+    width: 33px;
+    height: 38px;
+    background-position: -93px -5px; }
+
+.choose-us__title--nice {
+  padding-right: 50px; }
+  .choose-us__title--nice::before {
+    left: auto;
+    right: 0;
+    width: 33px;
+    height: 42px;
+    background-position: -5px -53px; }
+
+.choose-us__title--actually {
+  padding-right: 50px; }
+  .choose-us__title--actually::before {
+    left: auto;
+    right: 0;
+    width: 35px;
+    height: 30px;
+    background-position: -93px -53px; }
+
 /* Загрузка дополнительных стилей страницы index секции main */
 .button {
   padding: 10px 38px;
@@ -267,6 +372,50 @@ body {
     .page-title {
       margin-bottom: 25px;
       font-size: 24px; } }
+
+.page-title--fz48 {
+  font-size: 48px; }
+  @media screen and (max-width: 414px) {
+    .page-title--fz48 {
+      font-size: 24px; } }
+
+.page-title__desc {
+  margin: 0;
+  font-size: 16px;
+  text-align: center; }
+
+.page-title__leaf {
+  position: relative;
+  margin: 30px auto 0 auto;
+  max-width: 475px;
+  height: 33px;
+  background: url("../img/leaf.png") center no-repeat; }
+  .page-title__leaf::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 200px;
+    height: 6px;
+    background: url("../img/line.png") repeat; }
+    @media screen and (max-width: 414px) {
+      .page-title__leaf::before {
+        width: calc(50% - 33px); } }
+  .page-title__leaf::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 200px;
+    height: 6px;
+    background: url("../img/line.png") repeat; }
+    @media screen and (max-width: 414px) {
+      .page-title__leaf::after {
+        width: calc(50% - 33px); } }
 
 .policies {
   display: flex;
@@ -404,7 +553,8 @@ body {
 
 .sale {
   background-color: #d7d7d7;
-  padding: 120px 95px 0 95px; }
+  padding: 120px 95px 0 95px;
+  margin-bottom: 100px; }
   @media screen and (max-width: 1330px) {
     .sale {
       padding-right: 0;
@@ -412,6 +562,10 @@ body {
   @media screen and (max-width: 736px) {
     .sale {
       padding: 50px 0; } }
+  @media screen and (max-width: 414px) {
+    .sale {
+      padding: 35px 0;
+      margin-bottom: 30px; } }
 
 .sale-bg-pizza {
   position: relative;

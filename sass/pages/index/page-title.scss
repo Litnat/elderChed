@@ -11,3 +11,57 @@
 		font-size: 24px;
 	}
 }
+
+.page-title--fz48 {
+	font-size: 48px;
+
+	@media #{$mobile-book} {
+		font-size: 24px;
+	}
+}
+
+.page-title__desc {
+	margin: 0;
+	font-size: 16px;
+	text-align: center;
+}
+
+.page-title__leaf {
+	position: relative;
+	margin: 30px auto 0 auto;
+	max-width: 475px;
+	height: 33px;
+	background: url('../img/leaf.png') center no-repeat;
+
+	#{&}::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		width: 200px;
+		height: 6px;
+		background: url('../img/line.png') repeat;
+
+		@media #{$mobile-book} {
+			width: calc(50% - 33px);
+		}
+	}
+
+	#{&}::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+		width: 200px;
+		height: 6px;
+		background: url('../img/line.png') repeat;
+
+		@media #{$mobile-book} {
+			width: calc(50% - 33px);
+		}
+	}
+}

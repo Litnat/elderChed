@@ -1,0 +1,137 @@
+.choose-us__title {
+  position: relative;
+  margin: 0 0 15px 0;
+
+  font-size: 24px;
+  color: $color-green;
+
+  #{&}::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-image: url('../img/icon-choose-us.png');
+    background-repeat: no-repeat;
+  }
+}
+
+.choose-us__desc {
+  margin: 0;
+
+  font-size: 14px;
+  color: $color-grey;
+  line-height: 24px;
+}
+
+.choose-us__content {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 115px;
+
+  @media #{$mobile-book} {
+    flex-direction: column;
+    margin-top: 35px;
+  }
+
+  #{&}::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: 0 auto;
+    max-width: 435px;
+    height: 100%;
+    background: url('../img/garantiay.png') no-repeat;
+    background-size: contain;
+
+    @media #{$tablet} {
+      display: none;
+    }
+  }
+}
+
+.choose-us__item {
+  max-width: 300px;
+  margin-bottom: 90px;
+
+  @media #{$mobile-book} {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.choose-us__item--tar {
+  text-align: right;
+}
+
+.choose-us__title--organic {
+  padding-left: 50px;
+
+  #{&}::before {
+    width: 34px;
+    height: 38px;
+    background-position: -5px -5px;
+  }
+}
+
+.choose-us__title--delicious {
+  padding-left: 50px;
+
+  #{&}::before {
+    width: 33px;
+    height: 35px;
+    background-position: -49px -5px;
+  }
+}
+
+.choose-us__title--fast {
+  padding-left: 50px;
+
+  #{&}::before {
+    width: 34px;
+    height: 35px;
+    background-position: -49px -50px;
+  }
+}
+
+.choose-us__title--healthy {
+  padding-right: 50px;
+
+  #{&}::before {
+    left: auto;
+    right: 0;
+    width: 33px;
+    height: 38px;
+    background-position: -93px -5px;
+  }
+}
+
+.choose-us__title--nice {
+  padding-right: 50px;
+
+  #{&}::before {
+    left: auto;
+    right: 0;
+    width: 33px;
+    height: 42px;
+    background-position: -5px -53px;
+  }
+}
+
+.choose-us__title--actually {
+  padding-right: 50px;
+
+  #{&}::before {
+    left: auto;
+    right: 0;
+    width: 35px;
+    height: 30px;
+    background-position: -93px -53px;
+  }
+}

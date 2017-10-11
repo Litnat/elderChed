@@ -1,6 +1,7 @@
 .sale {
 	background-color: #d7d7d7;
 	padding: 120px 95px 0 95px;
+	margin-bottom: 100px;
 
 	@media #{$desctop-lg} {
 		padding-right: 0;
@@ -9,6 +10,11 @@
 
 	@media #{$mobile} {
 		padding: 50px 0;
+	}
+
+	@media #{$mobile-book} {
+		padding: 35px 0;
+		margin-bottom: 30px;
 	}
 }
 

@@ -1,6 +1,7 @@
 /* Загрузка глобальных стилей */
 @import "global/variables";
 @import "global/fonts";
+@import "global/animate";
 @import "global/container";
 
 /* Загрузка основных стилей header'a */
@@ -18,7 +19,6 @@
   /* Загрузка дополнительных стилей страницы index секции main */
   @import "pages/index/button";
   @import "pages/index/featured-products";
-  @import "pages/index/information";
   @import "pages/index/latest-products";
   @import "pages/index/page-content";
   @import "pages/index/page-title";
@@ -65,8 +65,11 @@
 @import "general/footer/page-footer";
 @import "general/footer/socials-item";
 @import "general/footer/socials";
+@import "general/footer/information";
+@import "general/footer/documents";
 
 /* Подгрузка стилей шаблона */
+@import "general/templates/discussions-comment";
 @import "general/templates/card-product";
 @import "general/templates/card-product-full";
 @import "general/templates/produce";

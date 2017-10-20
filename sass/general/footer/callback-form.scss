@@ -1,0 +1,35 @@
+.callback-form__btn {
+  cursor: pointer;
+}
+
+.callback-form__input {
+  font-family: 'Roboto Slab';
+  padding: 19px 19px 15px 19px;
+  font-size: 14px;
+  line-height: 1;
+  color: #898989;
+  outline: 0;
+  border: 1px solid #e5e5e5;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  #{&}:focus {
+    border-color: #c3bdbd;
+  }
+}
+
+.callback-form__label {
+  display: block;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.callback-form__label-link {
+  color: $color-grey;
+  transition: opacity .3s;
+
+  #{&}:hover {
+    opacity: .5;
+  }
+}

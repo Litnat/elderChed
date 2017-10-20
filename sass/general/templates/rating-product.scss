@@ -1,0 +1,36 @@
+.rating-product {
+  max-width: 170px;
+}
+
+.rating-product__inner {
+  padding: 22px 5px 15px 5px;
+  text-align: center;
+}
+
+.rating-product__image-box {
+  width: 170px;
+  height: 170px;
+  background: #f7f7f7;
+  box-shadow: $default-box-shadow;
+}
+.rating-product__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.rating-product__name {
+  font-size: 18px;
+  color: $color-default-text;
+  font-weight: 900;
+
+  margin: 0 0 6px 0;
+}
+
+.rating-product__price {
+  font-size: 18px;
+  color: $color-green;
+  font-weight: 900;
+
+  margin: 0;
+}

@@ -71,8 +71,8 @@
     </main>
 
     <footer class="page-footer">
-      <div class="page-footer__inner-top">
-        <div class="container">
+      <div class="container  page-footer__grid">
+        <div class="page-footer__inner-top">
           <section class="about">
             <h2 class="section-title">Коротко о нас</h2>
 
@@ -85,10 +85,10 @@
             <h2 class="section-title">Информация</h2>
 
             <p class="page-footer__title">Продукты</p>
-            <a class="page-footer__text" href>Пицца</a>
-            <a class="page-footer__text" href>Мороженое</a>
-            <a class="page-footer__text" href>Напитки</a>
-            <a class="page-footer__text" href>Закуски</a>
+            <a class="page-footer__text  page-footer__text--link" href>Пицца</a>
+            <a class="page-footer__text  page-footer__text--link" href>Мороженое</a>
+            <a class="page-footer__text  page-footer__text--link" href>Напитки</a>
+            <a class="page-footer__text  page-footer__text--link" href>Закуски</a>
           </section>
 
           <section class="socials">
@@ -99,30 +99,33 @@
             <div class="socials__content">
               <a class="socials-item  socials-item--vk" href>Вконтакте</a>
               <a class="socials-item  socials-item--in" href>Instagram</a>
-              <a class="socials-item  socials-item--tw" href>Twitter</a>
             </div>
           </section>
 
           <section class="callback">
-            <h2 class="section-title">Звонок вам!</h2>
+              <h2 class="section-title">Звонок вам!</h2>
 
-            <p class="page-footer__title">Мы можем перезвонить вам</p>
-            <p class="page-footer__text">Оставьте ваш номер телефона и мы перезвоним вам</p>
+              <p class="page-footer__title">Мы можем перезвонить вам</p>
+              <p class="page-footer__text">Оставьте ваш номер телефона и мы перезвоним вам через несколько минут</p>
 
-            <form class="callback-form" action="index.html" method="post">
-              <input type="tel" class="callback-form__input" name="callback-form__phone" placeholder="Введите ваш номер телефона">
-              <button type="callback-button" name="button">Отправить</button>
-            </form>
-          </section>
+              <form class="callback-form" action="index.html" method="post">
+                <input type="tel" class="callback-form__input" name="callback-form__phone" placeholder="Введите ваш номер телефона">
+
+                <label class="callback-form__label">
+                  <input type="checkbox" class="callback-form__checkbox" name="callback-form__privacy">
+                  <span class="page-footer__text">Я принимаю <a href="#" class="callback-form__label-link">условия передачи информации</a></span>
+                </label>
+
+                <button class="callback-form__btn  shop-button" type="callback-button" name="button">Отправить</button>
+              </form>
+            </section>
         </div>
-      </div>
-      <div class="page-footer__inner-bottom">
-        <div class="container">
-          <a class="copy-text" href="https://vk.com/id154877035">devoloper</a>
+        <div class="page-footer__inner-bottom">
+          <a class="copy-text  page-footer__text--link" href="https://vk.com/id154877035">web-devoloper</a>
 
           <div class="documents">
-            <a class="copy-text" href>Контакты</a>
-            <a class="copy-text" href>Политика Конфиденциальности</a>
+            <a class="copy-text  page-footer__text--link" href>Контакты</a>
+            <a class="copy-text  page-footer__text--link" href>Политика Конфиденциальности</a>
           </div>
         </div>
       </div>

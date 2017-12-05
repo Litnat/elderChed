@@ -5,11 +5,11 @@
 /* width device */
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/Roboto.ttf"), local("Roboto"); }
+  src: url("../fonts/Roboto.ttf") format("truetype"), url("../fonts/Roboto.woff") format("woff"), local("Roboto"); }
 
 @font-face {
   font-family: 'Roboto Slab';
-  src: url("../fonts/RobotoSlab.ttf"), local("Roboto Slab"); }
+  src: url("../fonts/RobotoSlab.ttf") format("truetype"), url("../fonts/RobotoSlab.woff") format("woff"), local("Roboto Slab"); }
 
 body {
   font-family: 'Roboto Slab'; }
@@ -274,6 +274,46 @@ body {
     width: 35px;
     height: 30px;
     background-position: -93px -53px; }
+
+.current-page {
+  background: #2b2b2b; }
+
+.current-page__title {
+  font-family: 'Roboto Slab';
+  margin: 0;
+  padding: 80px 0 0 0;
+  font-size: 65px;
+  line-height: 78px;
+  color: #fff;
+  font-weight: 100;
+  text-align: center; }
+
+.current-page__breadcrumbs {
+  text-align: center;
+  padding-bottom: 70px; }
+
+.current-page__breadcrumbs-item {
+  padding-right: 25px;
+  font-family: 'Roboto Slab';
+  font-size: 18px;
+  line-height: 35px;
+  color: #fff;
+  font-weight: 500;
+  text-decoration: none; }
+  .current-page__breadcrumbs-item--active {
+    position: relative;
+    padding: 0 0 0 30px;
+    color: #80b435; }
+    .current-page__breadcrumbs-item--active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: 0;
+      border: 7px solid transparent;
+      border-left-color: #fff; }
 
 /* Загрузка дополнительных стилей страницы index секции main */
 .button {

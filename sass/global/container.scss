@@ -5,6 +5,11 @@
 	padding: 0 30px;
   margin: 0 auto;
 
+	#{&}--lg {
+		width: calc(100% - 60px);
+		max-width: 1860px;
+	}
+
 	@media #{$desctop} {
 		width: calc(100% - 60px);
 	}

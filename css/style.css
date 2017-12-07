@@ -20,6 +20,9 @@ body {
   max-width: 1170px;
   padding: 0 30px;
   margin: 0 auto; }
+  .container--lg {
+    width: calc(100% - 60px);
+    max-width: 1860px; }
   @media screen and (max-width: 1220px) {
     .container {
       width: calc(100% - 60px); } }
@@ -928,6 +931,151 @@ body {
     opacity: .5; }
 
 /* Загрузка дополнительных стилей страницы catalog секции main */
+.catalog {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1480px 345px;
+      grid-template-columns: 1480px 345px;
+  justify-content: space-between;
+  padding: 60px 0 205px 0; }
+
+.catalog__controlls {
+  padding-left: 30px; }
+
+.catalog__item {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #cacaca; }
+  .catalog__item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0; }
+
+.catalog__controlls-title {
+  position: relative;
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+  font-family: 'Roboto Slab';
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 900;
+  text-transform: uppercase; }
+  .catalog__controlls-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: #80b435; }
+
+.categories__list {
+  display: -ms-grid;
+  display: grid; }
+
+.categories__item {
+  margin-bottom: 20px;
+  padding-left: 18px;
+  font-family: 'Roboto Slab';
+  font-size: 18px;
+  line-height: 1;
+  color: #2b2b2b;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .categories__item--active {
+    color: #80b435; }
+
+.controll-price__form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.controll-price__input {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%; }
+  .controll-price__input:focus {
+    outline: none; }
+  .controll-price__input::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435;
+    background: #80b435;
+    border-radius: 1.3px;
+    border: 0.2px solid #80b435; }
+  .controll-price__input::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435;
+    border: 1px solid #80b435;
+    height: 11px;
+    width: 11px;
+    background: #80b435;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px; }
+  .controll-price__input:focus::-webkit-slider-runnable-track {
+    background: #80b435; }
+  .controll-price__input::-moz-range-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435;
+    background: #80b435;
+    border-radius: 1.3px;
+    border: 0.2px solid #80b435; }
+  .controll-price__input::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435;
+    border: 1px solid #80b435;
+    height: 11px;
+    width: 11px;
+    background: #80b435;
+    cursor: pointer; }
+  .controll-price__input::-ms-track {
+    width: 100%;
+    height: 3px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent; }
+  .controll-price__input::-ms-fill-lower {
+    background: #80b435;
+    border: 0.2px solid #80b435;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435; }
+  .controll-price__input::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #80b435;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435; }
+  .controll-price__input::-ms-thumb {
+    box-shadow: 1px 1px 1px #80b435, 0px 0px 1px #80b435;
+    border: 1px solid #80b435;
+    height: 11px;
+    width: 11px;
+    background: #80b435;
+    cursor: pointer; }
+  .controll-price__input:focus::-ms-fill-lower {
+    background: #80b435; }
+  .controll-price__input:focus::-ms-fill-upper {
+    background: #80b435; }
+
+.controll-price__bounds {
+  font-family: 'Roboto Slab';
+  font-size: 18px;
+  line-height: 1;
+  color: #80b435; }
+
+.products__content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (350px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 350px);
+  grid-gap: 25px;
+  justify-content: space-between; }
+
 /* Загрузка дополнительных стилей страницы about секции main */
 /* Загрузка дополнительных стилей страницы contacts секции main */
 /* Загрузка дополнительных стилей страницы 404-page секции main */

@@ -1,0 +1,45 @@
+.catalog {
+  display: grid;
+  grid-template-columns: 1480px 345px;
+  justify-content: space-between;
+  padding: 60px 0 205px 0;
+}
+
+.catalog__controlls {
+  padding-left: 30px;
+}
+
+.catalog__item {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #cacaca;
+
+  #{&}:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+
+.catalog__controlls-title {
+  position: relative;
+
+  margin: 0 0 20px 0;
+  padding-bottom: 15px;
+
+  font-family: 'Roboto Slab';
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  #{&}::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 3px;
+    background: $color-green;
+  }
+}

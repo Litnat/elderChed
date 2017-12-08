@@ -7,3 +7,23 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes showCartToggleBtn {
+  0% {
+    right: -7px;
+  }
+
+  100% {
+    right: 352px;
+  }
+}
+
+@keyframes showCartWidget {
+  0% {
+    right: -360px;
+  }
+
+  100% {
+    right: 0;
+  }
+}

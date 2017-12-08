@@ -10,6 +10,7 @@
 @import "general/header/page-nav";
 @import "general/header/phone-number";
 @import "general/header/cart";
+@import "general/header/cart-widget";
 
 
 /* Загрузка основных стилей main'a */
@@ -76,3 +77,4 @@
 @import "general/templates/produce";
 @import "general/templates/rating-product";
 @import "general/templates/top-rated-product";
+@import "general/templates/cart-widget-item";

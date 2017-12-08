@@ -18,21 +18,71 @@
       <div class="container">
         <div class="page-header__inner">
           <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
-          <a class="logo" href>Стариа Чед</a>
+          <a class="logo" href>Старина Чед</a>
 
           <div class="cart">
             <p class="cart__item">Корзина</p>
             <span class="cart__current-product">1</span>
 
-            <div class="cart__widget">
-              
+            <div class="cart-widget">
+              <button class="cart-widget__toggle-btn">Открыть / Закрыть корзину</button>
+
+              <div class="cart-widget__content">
+                <p class="cart-widget__title  cart-widget__title--controller">Ваша корзина / Корзина пуста</p>
+
+                <div class="cart-widget__inner">
+                  <div class="cart-widget-item">
+                    <div class="cart-widget-item__image-box">
+                      <img class="cart-widget-item__img" src alt>
+                    </div>
+
+                    <a class="cart-widget-item__title" href>Куриный суп</a>
+
+                    <input class="cart-widget-item__number" type="number" name="cart-widget-item__quantity" value="1">
+
+                    <span class="cart-widget-item__price">139 руб.</span>
+
+                    <button class="cart-widget-item__del-order">x</button>
+                  </div>
+
+                  <div class="cart-widget-item">
+                    <div class="cart-widget-item__image-box">
+                      <img class="cart-widget-item__img" src alt>
+                    </div>
+
+                    <a class="cart-widget-item__title" href>Куриный суп</a>
+
+                    <input class="cart-widget-item__number" type="number" name="cart-widget-item__quantity" value="1">
+
+                    <span class="cart-widget-item__price">139 руб.</span>
+
+                    <button class="cart-widget-item__del-order">x</button>
+                  </div>
+                </div>
+
+                <button class="cart-widget__continue-product">Продолжить покупки</button>
+
+                <p class="cart-widget__total">Итого: <span class="cart-widget__total-number">439 руб</span></p>
+
+                <p class="cart-widget__title">Быстрый заказ</p>
+
+                <form class="cart-widget__form" action="#" method="#">
+                  <input class="cart-widget__input" type="text" name="cart-widget-username" placeholder="Ваше имя">
+                  <input class="cart-widget__input" type="text" name="cart-widget-phone" placeholder="Контактный телефон">
+                  <input class="cart-widget__input" type="text" name="cart-widget-email" placeholder="Ваш e-mail">
+                  <textarea class="cart-widget__input" type="text" name="cart-widget-address" placeholder="Адрес доставки"></textarea>
+                  <textarea class="cart-widget__input" type="text" name="cart-widget-message" placeholder="Комментарий"></textarea>
+
+                  <button class="cart-widget__send-btn">Отправить заказ</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
 
         <nav class="page-nav">
-          <button class="page-nav__toggle-button  page-nav__toggle-button--close">Открыть / Закрыть меню</button>
-          <ul class="page-nav__list  page-nav__list--open">
+          <button class="page-nav__toggle-button  page-nav__toggle-button--open">Открыть / Закрыть меню</button>
+          <ul class="page-nav__list">
             <li class="page-nav__item"><a class="page-nav__link  page-nav__link--active" href>Главная</a></li>
             <li class="page-nav__item"><a class="page-nav__link" href="/catalog.html">Магазин</a></li>
             <li class="page-nav__item"><a class="page-nav__link" href="/about.html">О нас</a></li>
@@ -710,5 +760,22 @@
 				</div>
 			</div>
 		</template>
+
+    <!-- Шаблон карточки в виджете корзины -->
+    <template id="cart-widget-item-template" style="display: none">
+      <div class="cart-widget-item">
+        <div class="cart-widget-item__image-box">
+          <img class="cart-widget-item__img" src alt>
+        </div>
+
+        <a class="cart-widget-item__title" href></a>
+
+        <input class="cart-widget-item__number" type="number" name="cart-widget-item__quantity" value="1">
+
+        <span class="cart-widget-item__price"></span>
+
+        <button class="cart-widget-item__del-order"></button>
+      </div>
+    </template>
   </body>
 </html>

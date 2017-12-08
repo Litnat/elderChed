@@ -67,6 +67,11 @@
 	background-color: #fff;
 	transition: all .3s;
 
+	@media #{$mobile-book} {
+		padding: 7px 20px;
+		margin-bottom: 10px;
+	}
+
 	#{&}:hover {
 		background-color: $color-default-text;
 		color: #fff;

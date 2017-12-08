@@ -15,16 +15,41 @@
   margin: 0;
 
   @media #{$mobile} {
+    display: none;
     flex-direction: column;
+  }
+
+  #{&}--open {
+    @media #{$mobile} {
+      display: block;
+      flex-direction: column;
+    }
   }
 }
 
-.page-nav__close {
+.page-nav__toggle-button {
   display: none;
+  font-size: 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  background-color: #cccccc;
+  border: 1px solid #cccccc;
 
   @media #{$mobile} {
     display: block;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+
+  #{&}--open {
+    border: none;
+    background: transparent url('../img/mobile_open-menu.svg') no-repeat;
+  }
+
+  #{&}--close {
+    border: none;
+    background: transparent url('../img/mobile_close-menu.svg') no-repeat;
   }
 }
 

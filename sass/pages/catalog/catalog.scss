@@ -3,10 +3,24 @@
   grid-template-columns: 1480px 345px;
   justify-content: space-between;
   padding: 60px 0 205px 0;
+
+  @media #{$desctop-xxl} {
+    grid-template-columns: calc(100% - 345px) 345px;
+  }
+
+  @media #{$mobile} {
+    grid-template-columns: repeat(auto-fit, 100%);
+    padding: 30px 0 35px 0;
+  }
 }
 
 .catalog__controlls {
   padding-left: 30px;
+
+  @media #{$mobile} {
+    order: -1;
+    padding-left: 0;
+  }
 }
 
 .catalog__item {
@@ -17,6 +31,17 @@
   #{&}:last-child {
     padding-bottom: 0;
     margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  @media #{$mobile} {
+    padding-bottom: 0;
+
+    #{&}:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
   }
 }
 
@@ -26,7 +51,6 @@
   margin: 0 0 20px 0;
   padding-bottom: 15px;
 
-  font-family: 'Roboto Slab';
   font-size: 24px;
   line-height: 1;
   font-weight: 900;
@@ -41,5 +65,15 @@
     width: 80px;
     height: 3px;
     background: $color-green;
+  }
+
+  @media #{$mobile} {
+    cursor: pointer;
+  }
+
+  @media #{$mobile-book} {
+    font-size: 18px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
   }
 }

@@ -1,12 +1,15 @@
 .categories__list {
   display: grid;
+
+  @media #{$mobile} {
+    display: none;
+  }
 }
 
 .categories__item {
   margin-bottom: 20px;
   padding-left: 18px;
 
-  font-family: 'Roboto Slab';
   font-size: 18px;
   line-height: 1;
   color: $color-default-text;

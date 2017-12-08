@@ -19,12 +19,20 @@
         <div class="page-header__inner">
           <a class="phone-number" href="tel:+79158867574">+7 (915) 886-75-74</a>
           <a class="logo" href>Стариа Чед</a>
-          <a class="phone-number  phone-number--reverse-icon" href="tel:+79158867574">+7 (915) 886-75-74</a>
+
+          <div class="cart">
+            <p class="cart__item">Корзина</p>
+            <span class="cart__current-product">1</span>
+
+            <div class="cart__widget">
+              
+            </div>
+          </div>
         </div>
 
         <nav class="page-nav">
-          <button class="page-nav__close">Закрыть меню</button>
-          <ul class="page-nav__list">
+          <button class="page-nav__toggle-button  page-nav__toggle-button--close">Открыть / Закрыть меню</button>
+          <ul class="page-nav__list  page-nav__list--open">
             <li class="page-nav__item"><a class="page-nav__link  page-nav__link--active" href>Главная</a></li>
             <li class="page-nav__item"><a class="page-nav__link" href="/catalog.html">Магазин</a></li>
             <li class="page-nav__item"><a class="page-nav__link" href="/about.html">О нас</a></li>
@@ -102,7 +110,8 @@
             <p class="card-product__price">$350.00</p>
 
             <div class="card-product__bar">
-              <a class="card-product__bar-link" href>Перейти к деталям</a>
+              <a class="card-product__bar-link  card-product__bar-link--detail" href>Перейти к деталям</a>
+              <a class="card-product__bar-link  card-product__bar-link--buy" href>В корзину</a>
             </div>
           </div>
 
@@ -649,7 +658,8 @@
         <p class="card-product__price"></p>
 
         <div class="card-product__bar">
-          <a class="card-product__bar-link" href></a>
+          <a class="card-product__bar-link  card-product__bar-link--detail" href></a>
+          <a class="card-product__bar-link  card-product__bar-link--buy" href></a>
         </div>
       </div>
     </template>

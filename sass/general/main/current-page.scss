@@ -13,11 +13,21 @@
   font-weight: 100;
 
   text-align: center;
+
+  @media #{$mobile-book} {
+    padding: 30px 0 0 0;
+    font-size: 40px;
+    line-height: 44px;
+  }
 }
 
 .current-page__breadcrumbs {
   text-align: center;
   padding-bottom: 70px;
+
+  @media #{$mobile-book} {
+    padding-bottom: 30px;
+  }
 }
 
 .current-page__breadcrumbs-item {
@@ -30,6 +40,10 @@
   font-weight: 500;
 
   text-decoration: none;
+
+  @media #{$mobile-book} {
+    padding-right: 10px;
+  }
 
   #{&}--active {
     position: relative;
@@ -51,6 +65,10 @@
       border-left-color: #fff;
 
       // transform: rotate(45deg);
+    }
+
+    @media #{$mobile-book} {
+      padding: 0 0 0 15px;
     }
   }
 }

@@ -1,0 +1,129 @@
+.card-product-full {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+
+  margin-bottom: 40px;
+
+  #{&}--none {
+    display: none;
+  }
+}
+
+.card-product-full__image-box {
+  flex: 0 0 36.82433001%;
+  height: 300px;
+
+  @media #{$desctop} {
+    height: 200px;
+  }
+
+  @media #{$tablet} {
+    flex: 0 0 100%;
+    height: 250px;
+  }
+}
+
+.card-product-full__img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  object-fit: cover;
+  box-shadow: 9px 12px 14px 0 #d7d8db, 0 0 0 1px #e3e4e8;
+
+  @media #{$mobile-book} {
+    box-shadow: 6px 9px 14px 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  }
+}
+
+.card-product-full__info {
+  flex: 0 0 61.17566999%;
+  padding-left: 2%;
+
+  @media #{$tablet} {
+    flex: 0 0 100%;
+    padding-left: 0;
+    padding-top: 10px;
+  }
+}
+
+.card-product-full__info-title {
+  margin: 0 0 10px 0;
+
+  font-size: 48px;
+  line-height: 58px;
+  color: $color-default-text;
+
+  @media #{$desctop} {
+    font-size: 38px;
+    line-height: 48px;
+  }
+}
+
+.card-product-full__info-price {
+  margin: 10px 0;
+
+  font-size: 36px;
+  line-height: 1;
+  color: $color-green;
+
+  @media #{$desctop} {
+    font-size: 33px;
+  }
+}
+
+.card-product-full__info-desc {
+  margin: 10px 0 0 0;
+
+  font-size: 18px;
+  line-height: 30px;
+  color: $color-grey;
+
+  @media #{$desctop} {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+.card-product-full__info-button {
+  margin-top: 30px;
+  padding: 17px 55px;
+
+  font-size: 14px;
+  color: $color-white;
+
+  background: $color-green;
+  border: 1px solid $color-white;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  transition: all .3s;
+
+  #{&}:hover {
+    color: $color-green;
+
+    background: $color-white;
+    border: 1px solid $color-green;
+  }
+
+  #{&}:active {
+    opacity: .7;
+  }
+}
+
+.card-product-full__info-socials {
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-product-full__info-socials-title {
+  margin: 30px 0 0 0;
+  font-size: 14px;
+  color: $color-default-text;
+}
+
+.card-product-full__info-socials-item {
+  padding-left: 5px;
+  font-size: 14px;
+}

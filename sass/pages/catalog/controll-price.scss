@@ -2,6 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+
+  @media #{$mobile} {
+    display: none;
+  }
 }
 
 .controll-price__input {
@@ -103,8 +108,32 @@
 }
 
 .controll-price__bounds {
-  font-family: 'Roboto Slab';
   font-size: 18px;
   line-height: 1;
   color: $color-green;
+}
+
+.controll-price__button {
+  font-family: 'Roboto Slab';
+  padding:  5px 20px;
+  background: none;
+  border: 1px solid #cccccc;
+  font-size: 16px;
+  line-height: 1;
+  color: $color-default-text;
+  cursor: pointer;
+
+  transition: all .3s;
+
+  #{&}:hover {
+    color: $color-green;
+  }
+
+  #{&}:active {
+    color: $color-green;
+  }
+
+  #{&}:focus {
+    color: $color-green;
+  }
 }

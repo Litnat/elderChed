@@ -13,6 +13,10 @@
 		width: 100%;
 		height: 240px;
 	}
+
+	#{&}--none {
+		display: none;
+	}
 }
 
 .card-product__name {
@@ -35,6 +39,7 @@
 
 .card-product__bar {
 	display: none;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
@@ -51,6 +56,7 @@
 
 .card-product__bar-link {
 	padding: 15px 30px;
+	margin-bottom: 15px;
 	font-size: 18px;
 	font-weight: 900;
 	color: $color-default-text;
@@ -68,5 +74,12 @@
 
 	#{&}:active {
 		opacity: .6;
+	}
+
+	#{&}--buy {
+		#{&}:hover {
+			background-color: $color-green;
+			color: #fff;
+		}
 	}
 }

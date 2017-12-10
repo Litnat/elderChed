@@ -1,0 +1,23 @@
+.other-produce {
+	margin-bottom: 60px;
+}
+
+.other-produce__container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 350px);
+	grid-gap: 30px;
+	justify-content: center;
+}
+
+.other-produce__title {
+	margin: 0;
+
+	font-size: 48px;
+	line-height: 1;
+	color: $color-default-text;
+	text-align: center;
+}
+
+.other-produce__container {
+	margin-top: 60px;
+}

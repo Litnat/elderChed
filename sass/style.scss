@@ -17,6 +17,7 @@
 @import "general/main/section-title";
 @import "general/main/choose-us";
 @import "general/main/current-page";
+@import "general/main/star";
 
   /* Загрузка дополнительных стилей страницы index секции main */
   @import "pages/index/button";
@@ -37,7 +38,10 @@
   @import "pages/catalog/categories";
   @import "pages/catalog/controll-price";
   @import "pages/catalog/products";
-  @import "pages/catalog/star";
+
+  /* Загрузка дополнительных стилей страницы product секции main */
+  @import "pages/product/produce";
+  @import "pages/product/other-produce";
 
   /* Загрузка дополнительных стилей страницы about секции main */
   @import "pages/about/about";

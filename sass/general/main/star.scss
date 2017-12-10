@@ -1,0 +1,22 @@
+.star {
+  display: flex;
+}
+
+.star__item {
+  flex: 0 0 15px;
+  height: 15px;
+  margin-right: 3px;
+
+  background: transparent url('../img/star.svg') no-repeat;
+  background-size: cover;
+
+  #{&}:last-child {
+    margin-right: 0;
+  }
+
+  #{&}--lg {
+  	flex: 0 0 20px;
+	  height: 20px;
+	  margin-right: 5px;
+  }
+}

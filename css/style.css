@@ -516,6 +516,22 @@ body {
       .current-page__breadcrumbs-item--active {
         padding: 0 0 0 15px; } }
 
+.star {
+  display: flex; }
+
+.star__item {
+  flex: 0 0 15px;
+  height: 15px;
+  margin-right: 3px;
+  background: transparent url("../img/star.svg") no-repeat;
+  background-size: cover; }
+  .star__item:last-child {
+    margin-right: 0; }
+  .star__item--lg {
+    flex: 0 0 20px;
+    height: 20px;
+    margin-right: 5px; }
+
 /* Загрузка дополнительных стилей страницы index секции main */
 .button {
   padding: 10px 38px;
@@ -1412,16 +1428,146 @@ body {
     color: #80b435;
     text-decoration: underline; }
 
-.star {
-  display: flex; }
+/* Загрузка дополнительных стилей страницы product секции main */
+.produce {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px; }
 
-.star__item {
-  flex: 0 0 15px;
-  height: 15px;
-  margin-right: 3px;
-  background: transparent url("../img/star.png") no-repeat; }
-  .star__item:last-child {
-    margin-right: 0; }
+.produce__gallery {
+  position: relative;
+  flex: 0 0 860px; }
+
+.produce__input {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  margin: auto 0; }
+
+.produce__full-box {
+  width: 860px;
+  margin-bottom: 19px; }
+
+.produce-full-box-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover; }
+
+.produce__controller {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (200px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 200px);
+  grid-gap: 19px; }
+
+.produce__quarter-img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  font-size: 0;
+  outline: none;
+  border: 1px solid #80b435;
+  cursor: pointer;
+  background: transparent url("http://cdn.fishki.net/upload/post/2017/03/19/2245758/tn/06-funny-cat-wallpapercat-wallpaper.jpg") center no-repeat;
+  background-size: cover; }
+
+.produce__info {
+  flex: 1 0 895px;
+  padding-left: 50px; }
+
+.produce__info-title {
+  margin: 0 0 20px 0;
+  font-size: 48px;
+  line-height: 1;
+  font-weight: 100;
+  color: #2b2b2b; }
+
+.produce__info-price {
+  margin: 15px 0;
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 900;
+  color: #80b435; }
+
+.desc-produce__text {
+  font-size: 18px;
+  line-height: 31px;
+  color: #565656; }
+
+.produce__button {
+  padding: 19px 52px;
+  font-family: 'Roboto Slab';
+  font-size: 14px;
+  line-height: 1;
+  color: #fff;
+  background: #80b435;
+  border: 1px solid #80b435;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all .3s; }
+  .produce__button:hover {
+    background-color: transparent;
+    color: #80b435; }
+  .produce__button:active {
+    opacity: .6; }
+
+.produce__info-socials {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0; }
+
+.produce__info-socials-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  color: #2b2b2b;
+  text-transform: uppercase; }
+
+.produce__info-socials-item {
+  padding-left: 5px;
+  font-size: 14px;
+  line-height: 1;
+  color: #2b2b2b;
+  text-transform: uppercase; }
+
+.produce__tabs {
+  flex: 0 0 100%; }
+
+.produce__tabs-controller {
+  flex: 0 0 300px; }
+
+.produce__tabs-item {
+  flex: 1 0 1465px; }
+  .produce__tabs-item--info {
+    display: none; }
+  .produce__tabs-item--reviews {
+    display: none; }
+
+.other-produce {
+  margin-bottom: 60px; }
+
+.other-produce__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (350px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 350px);
+  grid-gap: 30px;
+  justify-content: center; }
+
+.other-produce__title {
+  margin: 0;
+  font-size: 48px;
+  line-height: 1;
+  color: #2b2b2b;
+  text-align: center; }
+
+.other-produce__container {
+  margin-top: 60px; }
 
 /* Загрузка дополнительных стилей страницы about секции main */
 /* Загрузка дополнительных стилей страницы contacts секции main */

@@ -26,6 +26,10 @@
   border-radius: 50%;
   margin: 0 auto 20px auto;
 
+  #{&}:hover .family__img {
+    transform: scale(.9);
+  }
+
   @media #{$tablet} {
     height: 240px;
   }
@@ -42,6 +46,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  transition: transform .3s;
 }
 
 .family__item-title {

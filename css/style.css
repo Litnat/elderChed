@@ -358,6 +358,10 @@ body {
 .section-title {
   display: none; }
 
+.choose-us--bg-ccc {
+  padding-top: 30px;
+  background-color: #eeeeee; }
+
 .choose-us__title {
   position: relative;
   margin: 0 0 15px 0;
@@ -1773,6 +1777,156 @@ body {
     transform: rotate(0); }
 
 /* Загрузка дополнительных стилей страницы about секции main */
+.about__title {
+  margin: 0 0 20px 0;
+  font-size: 30px;
+  line-height: 1;
+  color: #80b435;
+  text-align: center; }
+
+.about__desc {
+  margin: 0 0 40px 0;
+  font-size: 48px;
+  line-height: 1;
+  color: #2b2b2b;
+  text-align: center;
+  font-weight: 900; }
+
+.family {
+  padding: 60px 0; }
+
+.family__content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.family__item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: calc(33% - 30px); }
+  @media screen and (max-width: 736px) {
+    .family__item {
+      flex-basis: 100%;
+      margin-bottom: 50px; } }
+
+.family__image-box {
+  max-width: 300px;
+  width: 100%;
+  height: 300px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto; }
+  @media screen and (max-width: 900px) {
+    .family__image-box {
+      height: 240px; } }
+  @media screen and (max-width: 736px) {
+    .family__image-box {
+      width: 200px;
+      height: 200px; } }
+
+.family__img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; }
+
+.family__item-title {
+  margin: 0 0 25px 0;
+  font-size: 24px;
+  line-height: 1;
+  color: #2b2b2b;
+  font-weight: 900;
+  text-align: center; }
+
+.family__item-desc {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666666;
+  text-align: center; }
+
+.family__item-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+
+.family__item-social-link {
+  font-size: 16px;
+  line-height: 1;
+  color: #80b435;
+  margin-right: 8px; }
+  .family__item-social-link:last-child {
+    margin-right: 0; }
+  .family__item-social-link:hover {
+    text-decoration: none; }
+
+.history {
+  padding: 60px 0; }
+
+.history__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.online-story__main-photo {
+  flex: 0 0 48%; }
+  @media screen and (max-width: 900px) {
+    .online-story__main-photo {
+      flex: 0 0 100%; } }
+
+.online-story__info {
+  flex: 0 0 48%; }
+  @media screen and (max-width: 900px) {
+    .online-story__info {
+      flex: 0 0 100%; } }
+  @media screen and (max-width: 414px) {
+    .online-story__info {
+      width: 100%; } }
+
+.online-story__main-photo-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; }
+  @media screen and (max-width: 900px) {
+    .online-story__main-photo-img {
+      width: 100%; } }
+
+.online-story__gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; }
+
+.online-story__image-box {
+  flex: 0 0 33%; }
+  @media screen and (max-width: 414px) {
+    .online-story__image-box {
+      flex: 0 0 100%;
+      margin-bottom: 15px; } }
+
+.online-story__img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; }
+
+.online-story__title {
+  margin: 0 0 25px 0;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #2b2b2b;
+  text-transform: uppercase;
+  font-weight: 100; }
+  @media screen and (max-width: 900px) {
+    .online-story__title {
+      margin-top: 15px; } }
+
+.online-story__desc {
+  margin: 0 0 25px 0;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666666; }
+
 /* Загрузка дополнительных стилей страницы contacts секции main */
 /* Загрузка дополнительных стилей страницы 404-page секции main */
 /* Загрузка дополнительных стилей страницы faq секции main */

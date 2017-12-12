@@ -70,8 +70,8 @@
                   <input class="cart-widget__input" type="text" name="cart-widget-username" placeholder="Ваше имя">
                   <input class="cart-widget__input" type="text" name="cart-widget-phone" placeholder="Контактный телефон">
                   <input class="cart-widget__input" type="text" name="cart-widget-email" placeholder="Ваш e-mail">
-                  <textarea class="cart-widget__input" type="text" name="cart-widget-address" placeholder="Адрес доставки"></textarea>
-                  <textarea class="cart-widget__input" type="text" name="cart-widget-message" placeholder="Комментарий"></textarea>
+                  <textarea class="cart-widget__input" name="cart-widget-address" placeholder="Адрес доставки"></textarea>
+                  <textarea class="cart-widget__input" name="cart-widget-message" placeholder="Комментарий"></textarea>
 
                   <button class="cart-widget__send-btn">Отправить заказ</button>
                 </form>
@@ -120,10 +120,10 @@
             </div>
 
             <div class="produce__controller">
-              <label class="produce__quarter-img" for="produce__quarter-img-01">Фотография-1</label>
-              <label class="produce__quarter-img" for="produce__quarter-img-02">Фотография-2</label>
-              <label class="produce__quarter-img" for="produce__quarter-img-03">Фотография-3</label>
-              <label class="produce__quarter-img" for="produce__quarter-img-04">Фотография-4</label>
+              <label class="produce__quarter-img  produce__quarter-img-01" for="produce__quarter-img-01">Фотография-1</label>
+              <label class="produce__quarter-img  produce__quarter-img-02" for="produce__quarter-img-02">Фотография-2</label>
+              <label class="produce__quarter-img  produce__quarter-img-03" for="produce__quarter-img-03">Фотография-3</label>
+              <label class="produce__quarter-img  produce__quarter-img-04" for="produce__quarter-img-04">Фотография-4</label>
             </div>
           </div>
 
@@ -153,40 +153,40 @@
           </div>
 
           <div class="produce__tabs">
-            <input id="produce__tabs--description" class="produce__tabs-input" type="radio" name="produce__tabs-toggle" checked>
-            <input id="produce__tabs--info" class="produce__tabs-input" type="radio" name="produce__tabs-toggle">
+            <input id="produce__tabs--description" class="produce__tabs-input" type="radio" name="produce__tabs-toggle">
+            <input id="produce__tabs--info" class="produce__tabs-input" type="radio" name="produce__tabs-toggle" checked>
             <input id="produce__tabs--reviews" class="produce__tabs-input" type="radio" name="produce__tabs-toggle">
-          </div>
 
-          <div class="produce__tabs-controller">
-            <label class="produce__tabs-label" for="produce__tabs--description">Описание</label>
-            <label class="produce__tabs-label" for="produce__tabs--info">Информация</label>
-            <label class="produce__tabs-label" for="produce__tabs--reviews">Отзывы</label>
-          </div>
-
-          <div class="produce__tabs-item  produce__tabs-item--desc">
-            <p class="produce__tabs-item-text-desc">Our Products Are Cultivated without The Use of Pesticides Our products are cultivated without the use of ticides, artificial fertilizers or chemicals, and come with the assurance of no artificial colours, flavours or preservatives. We.Our Products Are Cultivated without The Use of Pesticides Our products are cultivated ithout the use of pesticides, artificial fertilizers or chemicals</p>
-          </div>
-
-          <div class="produce__tabs-item  produce__tabs-item--info">
-            <div class="produce__tabs-item-block">
-              <p class="produce__tabs-item-info">Создатель</p>
-              <p class="produce__tabs-item-info  produce__tabs-item-info-brand">Старина Чед</p>
+            <div class="produce__tabs-controller">
+              <label class="produce__tabs-label  produce__tabs-label--desc" for="produce__tabs--description">Описание</label>
+              <label class="produce__tabs-label  produce__tabs-label--info" for="produce__tabs--info">Информация</label>
+              <label class="produce__tabs-label  produce__tabs-label--reviews" for="produce__tabs--reviews">Отзывы</label>
             </div>
 
-            <div class="produce__tabs-item-block">
-              <p class="produce__tabs-item-info">Кг</p>
-              <p class="produce__tabs-item-info  produce__tabs-item-info-weight">400 г.</p>
+            <div class="produce__tabs-item  produce__tabs-item--desc">
+              <p class="produce__tabs-item-text-desc">Our Products Are Cultivated without The Use of Pesticides Our products are cultivated without the use of ticides, artificial fertilizers or chemicals, and come with the assurance of no artificial colours, flavours or preservatives. We.Our Products Are Cultivated without The Use of Pesticides Our products are cultivated ithout the use of pesticides, artificial fertilizers or chemicals</p>
             </div>
 
-            <div class="produce__tabs-item-block">
-              <p class="produce__tabs-item-info">Калории</p>
-              <p class="produce__tabs-item-info  produce__tabs-item-info-calories">100 кк</p>
-            </div>
-          </div>
+            <div class="produce__tabs-item  produce__tabs-item--info">
+              <div class="produce__tabs-item-block">
+                <p class="produce__tabs-item-info">Создатель</p>
+                <p class="produce__tabs-item-info  produce__tabs-item-info--color-grey  produce__tabs-item-info--brand">Старина Чед</p>
+              </div>
 
-          <div class="produce__tabs-item  produce__tabs-item--reviews">
-            <p class="produce__tabs-item-reviews">Вкусная вещь, рекомендую!</p>
+              <div class="produce__tabs-item-block">
+                <p class="produce__tabs-item-info">Кг</p>
+                <p class="produce__tabs-item-info  produce__tabs-item-info--color-grey  produce__tabs-item-info--weight">400 г.</p>
+              </div>
+
+              <div class="produce__tabs-item-block">
+                <p class="produce__tabs-item-info">Калории</p>
+                <p class="produce__tabs-item-info  produce__tabs-item-info--color-grey  produce__tabs-item-info--calories">100 кк</p>
+              </div>
+            </div>
+
+            <div class="produce__tabs-item  produce__tabs-item--reviews">
+              <p class="produce__tabs-item-reviews">Вкусная вещь, рекомендую!</p>
+            </div>
           </div>
         </div>
 
@@ -194,8 +194,8 @@
           <p class="other-produce__title">Другие продукты</p>
 
           <div class="other-produce__controller">
-            <div class="other-produce__prev"></div>
-            <div class="other-produce__next"></div>
+            <div class="other-produce__arrow  other-produce__arrow--prev"></div>
+            <div class="other-produce__arrow  other-produce__arrow--next"></div>
           </div>
 
           <div class="other-produce__container">
@@ -228,6 +228,7 @@
                 <a class="card-product__bar-link  card-product__bar-link--buy" href>В корзину</a>
               </div>
             </div>
+          </div>
         </div>
       </div>
     </main>
@@ -278,7 +279,7 @@
                   <span class="page-footer__text">Я принимаю <a href="#" class="callback-form__label-link">условия передачи информации</a></span>
                 </label>
 
-                <button class="callback-form__btn  shop-button" type="callback-button" name="button">Отправить</button>
+                <button class="callback-form__btn  shop-button" name="button">Отправить</button>
               </form>
             </section>
         </div>
@@ -307,72 +308,73 @@
           </div>
 
           <div class="produce__controller">
-            <label id="produce__quarter-img-01" class="produce__quarter-img" for=""></label>
-            <label id="produce__quarter-img-02" class="produce__quarter-img" for=""></label>
-            <label id="produce__quarter-img-03" class="produce__quarter-img" for=""></label>
-            <label id="produce__quarter-img-04" class="produce__quarter-img" for=""></label>
+            <label class="produce__quarter-img  produce__quarter-img-01" for="produce__quarter-img-01"></label>
+            <label class="produce__quarter-img  produce__quarter-img-02" for="produce__quarter-img-02"></label>
+            <label class="produce__quarter-img  produce__quarter-img-03" for="produce__quarter-img-03"></label>
+            <label class="produce__quarter-img  produce__quarter-img-04" for="produce__quarter-img-04"></label>
           </div>
         </div>
 
         <div class="produce__info">
           <h2 class="produce__info-title"></h2>
 
-          <div class="produce__info-rating">
-            <span class="produce__info-star"></span>
+          <div class="produce__info-rating  star">
+            <span class="star__item  star__item--lg"></span>
+            <span class="star__item  star__item--lg"></span>
+            <span class="star__item  star__item--lg"></span>
           </div>
 
           <p class="produce__info-price"></p>
 
-          <div class="produce__info-desc-block">
+          <div class="produce__info-desc-block  desc-produce">
             <!-- В данный блок планируется вывод данных, браться они будут из json объекта и будут в формате html, например: ('<p>Текст такой-то <span>лучший текст</span></p>') -->
+            <p class="desc-produce__text"></p>
           </div>
 
-          <button class="produce__button">Перейти в каталог</button>
+          <button class="produce__button"></button>
 
           <div class="produce__info-socials">
-            <p class="produce__info-socials-title">Репостнуть в социальную сеть:</p>
+            <p class="produce__info-socials-title"></p>
 
             <span class="produce__info-socials-item  produce__info-socials-item--vk"></span>
-            <span class="produce__info-socials-item  produce__info-socials-item--inst"></span>
-            <span class="produce__info-socials-item  produce__info-socials--tw"></span>
           </div>
         </div>
 
         <div class="produce__tabs">
-          <input id="produce__tabs--description" class="produce__tabs-input" type="radio" name="produce__tabs-toggle" checked>
-          <input id="produce__tabs--info" class="produce__tabs-input" type="radio" name="produce__tabs-toggle">
+          <input id="produce__tabs--description" class="produce__tabs-input" type="radio" name="produce__tabs-toggle">
+          <input id="produce__tabs--info" class="produce__tabs-input" type="radio" name="produce__tabs-toggle" checked>
           <input id="produce__tabs--reviews" class="produce__tabs-input" type="radio" name="produce__tabs-toggle">
-        </div>
 
-        <div class="produce__tabs-controller">
-          <label class="produce__tabs-label" for="produce__tabs--description">Описание</label>
-          <label class="produce__tabs-label" for="produce__tabs--info">Информация</label>
-          <label class="produce__tabs-label" for="produce__tabs--reviews">Отзывы</label>
-        </div>
-
-        <div class="produce__tabs-item  produce__tabs-item--desc">
-          <p class="produce__tabs-item-text-desc"></p>
-        </div>
-
-        <div class="produce__tabs-item  produce__tabs-item--info">
-          <div class="produce__tabs-item-block">
-            <p class="produce__tabs-item-info">Создатель</p>
-            <p class="produce__tabs-item-info  produce__tabs-item-info-brand"></p>
+          <div class="produce__tabs-controller">
+            <label class="produce__tabs-label  produce__tabs-label--desc" for="produce__tabs--description"></label>
+            <label class="produce__tabs-label  produce__tabs-label--info" for="produce__tabs--info"></label>
+            <label class="produce__tabs-label  produce__tabs-label--reviews" for="produce__tabs--reviews"></label>
           </div>
 
-          <div class="produce__tabs-item-block">
-            <p class="produce__tabs-item-info">Кг</p>
-            <p class="produce__tabs-item-info  produce__tabs-item-info-weight"></p>
+          <div class="produce__tabs-item  produce__tabs-item--desc">
+            <p class="produce__tabs-item-text-desc"></p>
           </div>
 
-          <div class="produce__tabs-item-block">
-            <p class="produce__tabs-item-info">Калории</p>
-            <p class="produce__tabs-item-info  produce__tabs-item-info-calories"></p>
-          </div>
-        </div>
+          <div class="produce__tabs-item  produce__tabs-item--info">
+            <div class="produce__tabs-item-block">
+              <p class="produce__tabs-item-info"></p>
+              <p class="produce__tabs-item-info  produce__tabs-item-info--color-grey  produce__tabs-item-info--brand"></p>
+            </div>
 
-        <div class="produce__tabs-item  produce__tabs-item--reviews">
-          <p class="produce__tabs-item-reviews"></p>
+            <div class="produce__tabs-item-block">
+              <p class="produce__tabs-item-info"></p>
+              <p class="produce__tabs-item-info  produce__tabs-item-info--color-grey  produce__tabs-item-info--weight"></p>
+            </div>
+
+            <div class="produce__tabs-item-block">
+              <p class="produce__tabs-item-info"></p>
+              <p class="produce__tabs-item-info  produce__tabs-item-info--color-grey  produce__tabs-item-info--calories"></p>
+            </div>
+          </div>
+
+          <div class="produce__tabs-item  produce__tabs-item--reviews">
+            <p class="produce__tabs-item-reviews"></p>
+          </div>
         </div>
       </div>
     </template>

@@ -1,12 +1,40 @@
 .produce {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 40px;
+	margin: 40px 0;
 }
 
 .produce__gallery {
 	position: relative;
 	flex: 0 0 860px;
+
+	@media #{$desctop-lg} {
+		flex: 0 0 50%;
+	}
+
+	@media #{$mobile} {
+		flex: 0 0 100%;
+	}
+}
+
+.produce__gallery #produce__quarter-img-01:checked ~ .produce__controller .produce__quarter-img-01 {
+	border-color: $color-green;
+	filter: grayscale(0);
+}
+
+.produce__gallery #produce__quarter-img-02:checked ~ .produce__controller .produce__quarter-img-02 {
+	border-color: $color-green;
+	filter: grayscale(0);
+}
+
+.produce__gallery #produce__quarter-img-03:checked ~ .produce__controller .produce__quarter-img-03 {
+	border-color: $color-green;
+	filter: grayscale(0);
+}
+
+.produce__gallery #produce__quarter-img-04:checked ~ .produce__controller .produce__quarter-img-04 {
+	border-color: $color-green;
+	filter: grayscale(0);
 }
 
 .produce__input {
@@ -16,13 +44,26 @@
 	left: 0;
 	visibility: hidden;
 	opacity: 0;
-
+	display: none;
 	margin: auto 0;
 }
 
 .produce__full-box {
 	width: 860px;
 	margin-bottom: 19px;
+
+	@media #{$desctop-lg} {
+		width: 100%;
+		max-width: 630px;
+	}
+
+	@media #{$tablet} {
+		margin-bottom: 1px;
+	}
+
+	@media #{$mobile} {
+		max-width: 100%;
+	}
 }
 
 .produce-full-box-img {
@@ -34,8 +75,18 @@
 
 .produce__controller {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 200px); 
+	grid-template-columns: repeat(auto-fit, 200px);
 	grid-gap: 19px;
+
+	@media #{$desctop-lg} {
+		grid-template-columns: repeat(auto-fit, 25%);
+		grid-gap: 0;
+	}
+
+	@media #{$tablet} {
+		justify-content: space-between;
+		grid-template-columns: repeat(auto-fit, 50%);
+	}
 }
 
 .produce__quarter-img {
@@ -44,17 +95,35 @@
 	height: 200px;
 	font-size: 0;
 	outline: none;
-	border: 1px solid $color-green;
+	border: 1px solid #cccccc;
 	cursor: pointer;
 
 	background: transparent url('http://cdn.fishki.net/upload/post/2017/03/19/2245758/tn/06-funny-cat-wallpapercat-wallpaper.jpg') center no-repeat;
 	background-size: cover;
+	filter: grayscale(100%);
 
+	@media #{$desctop-lg} {
+		width: 100%;
+		height: 150px;
+	}
+
+	@media #{$tablet} {
+		width: 100%;
+		height: 100px;
+	}
 }
 
 .produce__info {
-	flex: 1 0 895px;
+	flex: 1 0 100px;
 	padding-left: 50px;
+
+	@media #{$desctop-lg} {
+		padding-left: 25px;
+	}
+
+	@media #{$mobile} {
+		padding-left: 0;
+	}
 }
 
 .produce__info-title {
@@ -64,6 +133,11 @@
 	line-height: 1;
 	font-weight: 100;
 	color: $color-default-text;
+
+	@media #{$mobile-book} {
+		margin-top: 20px;
+		font-size: 24px;
+	}
 }
 
 .produce__info-price {
@@ -73,12 +147,21 @@
 	line-height: 1;
 	font-weight: 900;
 	color: $color-green;
+
+	@media #{$mobile-book} {
+		font-size: 24px;
+	}
 }
 
 .desc-produce__text {
 	font-size: 18px;
 	line-height: 31px;
 	color: #565656;
+
+	@media #{$mobile-book} {
+		font-size: 16px;
+		line-height: 26px;
+	}
 }
 
 .produce__button {
@@ -103,6 +186,11 @@
 
 	#{&}:active {
 		opacity: .6;
+	}
+
+	@media #{$mobile-book} {
+		padding: 19px 15px;
+		width: 100%;
 	}
 }
 
@@ -131,21 +219,150 @@
 }
 
 .produce__tabs {
+	display: flex;
+	flex-wrap: wrap;
 	flex: 0 0 100%;
+
+	margin-top: 50px;
+	padding-top: 25px;
+	border-top: 1px solid #e6e6e6;
+
+	@media #{$mobile-book} {
+		margin-top: 15px;
+		padding-top: 5px;
+	}
 }
 
 .produce__tabs-controller {
+	display: flex;
+	flex-direction: column;
 	flex: 0 0 300px;
+	padding: 30px 0;
+
+	border-right: 1px solid #e6e6e6;
+
+	@media #{$mobile-book} {
+		flex: 0 0 100%;
+		padding: 10px 0;
+		border-right: none;
+	}
 }
 
 .produce__tabs-item {
-	flex: 1 0 1465px;
+	padding: 30px 0;
+	margin-left: 40px;
+	flex: 1 0 300px;
 
-	#{&}--info {
-		display: none;
+	display: none;
+
+	@media #{$mobile-book} {
+		flex: 0 0 100%;
+		padding: 10px 0;
+		margin-left: 0;
 	}
+}
 
-	#{&}--reviews {
-		display: none;
+.produce__tabs-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+}
+
+// Табы
+
+.produce__tabs #produce__tabs--description:checked ~ .produce__tabs-controller .produce__tabs-label--desc {
+	color: $color-green;
+}
+
+.produce__tabs #produce__tabs--info:checked ~ .produce__tabs-controller .produce__tabs-label--info {
+	color: $color-green;
+}
+
+.produce__tabs #produce__tabs--reviews:checked ~ .produce__tabs-controller .produce__tabs-label--reviews {
+	color: $color-green;
+}
+
+// Контент
+
+.produce__tabs #produce__tabs--description:checked ~ .produce__tabs-item--desc {
+	display: block;
+}
+
+.produce__tabs #produce__tabs--info:checked ~ .produce__tabs-item--info {
+	display: block;
+}
+
+.produce__tabs #produce__tabs--reviews:checked ~ .produce__tabs-item--reviews {
+	display: block;
+}
+
+.produce__tabs-label {
+	padding: 15px 0 15px 0;
+	margin-right: 40px;
+
+	font-size: 24px;
+	line-height: 1;
+	color: $color-default-text;
+	cursor: pointer;
+
+	border-bottom: 1px solid #e6e6e6;
+
+	@media #{$mobile-book} {
+		margin-right: 0;
+		padding: 10px 0;
+		font-size: 20px;
+	}
+}
+
+.produce__tabs-item-text-desc {
+	margin: 0 40px 0 0;
+
+	font-size: 18px;
+	line-height: 1.2;
+	color: $color-default-text;
+
+	@media #{$mobile-book} {
+		margin-right: 0;
+	}
+}
+
+.produce__tabs-item-info {
+	margin: 0;
+
+	font-size: 18px;
+	line-height: 1;
+	color: $color-default-text;
+
+	#{&}--color-grey {
+		color: $color-grey;
+	}
+}
+
+.produce__tabs-item-reviews {
+	margin: 0 40px 0 0;
+
+	font-size: 18px;
+	line-height: 1.2;
+	color: $color-default-text;
+
+	@media #{$mobile-book} {
+		margin-right: 0;
+	}
+}
+
+.produce__tabs-item-block {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+  padding: 18px 0 18px 0;
+	margin-right: 40px;
+
+	border-bottom: 1px solid #e6e6e6;
+
+	@media #{$mobile-book} {
+		margin-right: 0;
 	}
 }

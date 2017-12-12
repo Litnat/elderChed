@@ -7,17 +7,62 @@
 	grid-template-columns: repeat(auto-fit, 350px);
 	grid-gap: 30px;
 	justify-content: center;
+	margin-top: 40px;
+
+	@media #{$mobile-book} {
+		grid-template-columns: repeat(auto-fit, 100%);
+	}
 }
 
 .other-produce__title {
-	margin: 0;
+	margin: 0 0 15px 0;
 
 	font-size: 48px;
-	line-height: 1;
+	line-height: 1.2;
 	color: $color-default-text;
 	text-align: center;
+
+	@media #{$mobile-book} {
+		font-size: 29px;
+	}
 }
 
-.other-produce__container {
-	margin-top: 60px;
+.other-produce__controller {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.other-produce__arrow {
+	width: 78px;
+	height: 28px;
+	margin-right: 10px;
+
+	background: transparent url('../img/arrow.png') no-repeat;
+	background-position: center;
+	border: 1px solid #d6d6d6;
+	cursor: pointer;
+
+	transition: opacity .3s;
+
+	#{&}:hover {
+		background-color: #fff;
+		opacity: .6;
+	}
+
+	#{&}:active {
+		opacity: .4;
+	}
+
+	#{&}:last-child {
+		margin-right: 0;
+	}
+
+	#{&}--prev {
+		transform: rotate(180deg);
+	}
+
+	#{&}--next {
+		transform: rotate(0);
+	}
 }

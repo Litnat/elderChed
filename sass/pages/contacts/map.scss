@@ -1,0 +1,32 @@
+.map {
+  position: relative;
+  margin-bottom: 200px;
+
+  @media #{$tablet} {
+    margin-bottom: 50px;
+  }
+}
+
+.map__frame > iframe {
+  @media #{$desctop-lg} {
+    height: 400px;
+  }
+}
+
+.map__contacts {
+  position: absolute;
+  bottom: -75px;
+  left: 0;
+  right: 0;
+
+  margin: 0 200px;
+  padding: 45px 0;
+
+  @media #{$desctop-lg} {
+    margin: 0;
+  }
+
+  @media #{$tablet} {
+    position: static;
+  }
+}

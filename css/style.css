@@ -1935,6 +1935,67 @@ body {
   color: #666666; }
 
 /* Загрузка дополнительных стилей страницы contacts секции main */
+.contacts-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 250px;
+  background: #fff; }
+  @media screen and (max-width: 900px) {
+    .contacts-list {
+      flex-wrap: wrap;
+      margin: 0; } }
+
+.contacts-list__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 0 0 265px; }
+  @media screen and (max-width: 900px) {
+    .contacts-list__item {
+      margin-bottom: 20px; } }
+
+.contacts-list__image-box {
+  width: 40px;
+  height: 40px;
+  background-color: #80b435;
+  border-radius: 50%; }
+
+.contacts-list__inner {
+  flex: 0 0 210px; }
+
+.contacts-list__text {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #2b2b2b; }
+  .contacts-list__text:hover {
+    text-decoration: none; }
+
+.map {
+  position: relative;
+  margin-bottom: 200px; }
+  @media screen and (max-width: 900px) {
+    .map {
+      margin-bottom: 50px; } }
+
+@media screen and (max-width: 1330px) {
+  .map__frame > iframe {
+    height: 400px; } }
+
+.map__contacts {
+  position: absolute;
+  bottom: -75px;
+  left: 0;
+  right: 0;
+  margin: 0 200px;
+  padding: 45px 0; }
+  @media screen and (max-width: 1330px) {
+    .map__contacts {
+      margin: 0; } }
+  @media screen and (max-width: 900px) {
+    .map__contacts {
+      position: static; } }
+
 /* Загрузка дополнительных стилей страницы 404-page секции main */
 /* Загрузка дополнительных стилей страницы faq секции main */
 .faq {

@@ -44,7 +44,11 @@
 }
 
 .faq__item-desc {
-  display: none;
+  transition: max-height 0.4s ease 0s;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
   margin: 0;
 
   font-size: 16px;

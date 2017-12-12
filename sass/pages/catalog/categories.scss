@@ -2,7 +2,10 @@
   display: grid;
 
   @media #{$mobile} {
-    display: none;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all .4s;
   }
 }
 

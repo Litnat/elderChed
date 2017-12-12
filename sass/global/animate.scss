@@ -18,6 +18,16 @@
   }
 }
 
+@keyframes hideCartToggleBtn {
+  0% {
+    right: 352px;
+  }
+
+  100% {
+    right: -7px;
+  }
+}
+
 @keyframes showCartWidget {
   0% {
     right: -360px;
@@ -25,5 +35,15 @@
 
   100% {
     right: 0;
+  }
+}
+
+@keyframes hideCartWidget {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -360px;
   }
 }

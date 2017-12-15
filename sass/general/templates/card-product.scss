@@ -9,6 +9,9 @@
 	box-shadow: $default-box-shadow;
 	transition: all .3s;
 
+	background-size: cover;
+  background-position: center;
+
 	@media #{$mobile-book} {
 		width: 100%;
 		height: 240px;
@@ -19,17 +22,29 @@
 	}
 }
 
+.card-product__inner {
+	background-color: rgba(0, 0, 0, .9);
+	padding: 20px 0;
+}
+
 .card-product__name {
 	margin: 0 0 5px 0;
 	padding: 0 30px;
 
 	font-size: 20px;
 	font-weight: 900;
-	color: $color-default-text;
+	color: #a9a9a9;
+}
+
+.card-product__sale {
+	color: $color-grey;
+	margin-right: 10px;
+	text-decoration: line-through;
+	font-size: 16px;
 }
 
 .card-product__price {
-	margin: 0 0 30px 0;
+	margin: 0;
 	padding: 0 30px;
 
 	font-size: 20px;
@@ -52,6 +67,7 @@
 
 .card-product:hover > .card-product__bar {
 	display: flex;
+	background: rgba(0, 0, 0, .5);
 }
 
 .card-product__bar-link {

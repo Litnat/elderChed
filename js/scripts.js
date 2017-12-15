@@ -157,3 +157,143 @@
     widthChange(mediaMobile);
   }
 })();
+
+// data-products
+(function() {
+  //index
+  var productLatestContainer = document.querySelector('.latest-products__content');
+  var featuredProductContent = document.querySelector('.featured-products__content');
+  var ratedProductList = document.querySelector('.rated-products__list');
+  var otherProduceContainer = document.querySelector('.other-produce__container');
+  var produceWrapper = document.querySelector('.produce-wrapper');
+
+  //catalog
+  var productCatalogContainer = document.querySelector('.products__content');
+
+  var templateCardProduct = null;
+  var templateRatingProduct = null;
+  var templateTopRatingProduct = null;
+  var templateProduceTemplate = null;
+
+  var fragment = document.createDocumentFragment();
+
+  var CURRENY_RU = ' Руб.';
+
+  var xhr = new XMLHttpRequest();
+
+  function calculateStars(item) {
+    var collectionStars = [];
+    var starsHTML = null;
+    for (var i = 0; i < item.stars; i++) {
+      collectionStars.push('<span class="star__item"></span>');
+    }
+
+    starsHTML = collectionStars.join('');
+    return starsHTML;
+  }
+
+  function addCardElements(items, container, howMany) {
+    var item = null;
+    templateCardProduct = document.querySelector('#card-product-template').content;
+
+    for (var i = 0; i < items.length && i < howMany; i++) {
+      var element = templateCardProduct.cloneNode(true);
+      item = items[i];
+
+      element.querySelector('.card-product').setAttribute('data-categories', item.type);
+      element.querySelector('.card-product').setAttribute('data-id', item.id);
+      element.querySelector('.card-product').style.background = 'url(' + item.photos[0] + ') center no-repeat';
+      element.querySelector('.card-product').style.backgroundSize = 'cover';
+
+      element.querySelector('.card-product__name').textContent = item.title;
+
+      if (item.oldPrice > 0) {
+        element.querySelector('.card-product__price').innerHTML = '<span class="card-product__sale">'+ item.oldPrice + CURRENY_RU + '</span>' + item.price + CURRENY_RU;
+      } else {
+        element.querySelector('.card-product__price').innerHTML = item.price + CURRENY_RU;
+      }
+
+      element.querySelector('.card-product__bar-link--detail').textContent = 'Показать товар';
+      element.querySelector('.card-product__bar-link--buy').textContent = 'В корзину';
+
+
+      fragment.appendChild(element);
+    }
+
+    container.appendChild(fragment);
+  }
+
+  function addRatingProduct(items, container, howMany) {
+    var item = null;
+    templateRatingProduct = document.querySelector('#rating-product-template').content;
+
+    for (var i = 0; i < items.length && i < howMany; i++) {
+      var element = templateRatingProduct.cloneNode(true);
+      item = items[i];
+
+      element.querySelector('.rating-product').setAttribute('data-categories', item.type);
+      element.querySelector('.rating-product').setAttribute('data-id', item.id);
+
+      element.querySelector('.rating-product__img').src = item.photos[0];
+      element.querySelector('.rating-product__name').textContent = item.title;
+      element.querySelector('.rating-product__price').textContent = item.price + CURRENY_RU;
+
+      fragment.appendChild(element);
+    }
+
+    container.appendChild(fragment);
+  }
+
+  function addTopRatingProduct(items, container, howMany) {
+    var item = null;
+    templateTopRatingProduct = document.querySelector('#top-rated-product-template').content;
+
+    for (var i = 0; i < items.length && i < howMany; i++) {
+      var element = templateTopRatingProduct.cloneNode(true);
+      item = items[i];
+
+      element.querySelector('.top-rated-product').setAttribute('data-categories', item.type);
+      element.querySelector('.top-rated-product').setAttribute('data-id', item.id);
+      element.querySelector('.top-rated-product__img').src = item.photos[0];
+      element.querySelector('.top-rated-product__info-title').textContent = item.title;
+      element.querySelector('.top-rated-product__info-price').textContent = item.price + CURRENY_RU;
+      element.querySelector('.top-rated-product__info-star').innerHTML = calculateStars(item);
+
+      fragment.appendChild(element);
+    }
+
+    container.appendChild(fragment);
+  }
+
+  function addDetailProduct(items, container) {
+    var item = null;
+    templateProduceTemplate = document.querySelector('#produce-template').content;
+
+    var element = templateProduceTemplate.cloneNode(true);
+
+    fragment.appendChild(element);
+    container.appendChild(fragment);
+  }
+
+  xhr.addEventListener('load', function() {
+    var data = JSON.parse(xhr.response);
+
+    switch (location.pathname) {
+      case '/index.html':
+        addCardElements(data, productLatestContainer, 10);
+        addRatingProduct(data, featuredProductContent, 12);
+        break;
+      case '/catalog.html':
+        addCardElements(data, productCatalogContainer, 15);
+        addTopRatingProduct(data, ratedProductList, 3);
+        break;
+      case '/product.html':
+        addDetailProduct(data, produceWrapper);
+        addCardElements(data, otherProduceContainer, 3);
+        break;
+    }
+  });
+
+  xhr.open('GET', 'js/data.json');
+  xhr.send();
+})();

@@ -1538,6 +1538,7 @@ body {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 645px;
   object-fit: cover; }
 
 .produce__controller {
@@ -1565,7 +1566,7 @@ body {
   outline: none;
   border: 1px solid #cccccc;
   cursor: pointer;
-  background: transparent url("http://cdn.fishki.net/upload/post/2017/03/19/2245758/tn/06-funny-cat-wallpapercat-wallpaper.jpg") center no-repeat;
+  background: transparent url("") center no-repeat;
   background-size: cover;
   filter: grayscale(100%); }
   @media screen and (max-width: 1330px) {

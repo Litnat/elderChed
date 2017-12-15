@@ -266,13 +266,64 @@
   }
 
   function addDetailProduct(items, container) {
-    var item = null;
-    templateProduceTemplate = document.querySelector('#produce-template').content;
+    var checMoreThanZero = location.search.split('?id=')[1] >= 0;
+    var checkSearchItem = location.search.split('=')[0] === '?id';
+    var checkLengthSearchItem = location.search.length > 0;
 
-    var element = templateProduceTemplate.cloneNode(true);
+    if (checkLengthSearchItem && checkSearchItem && checMoreThanZero) {
+      var currentSearchItem = location.search.split('?id=')[1];
+      var item = null;
+      templateProduceTemplate = document.querySelector('#produce-template').content;
+      var element = templateProduceTemplate.cloneNode(true);
+      var currentDataItem = items[currentSearchItem];
 
-    fragment.appendChild(element);
-    container.appendChild(fragment);
+      element.querySelector('.produce').setAttribute('data-id', currentSearchItem);
+      element.querySelector('.produce-full-box-img').src = currentDataItem.photos[0];
+
+      for (var i = 0; i < 4; i++) {
+        if (currentDataItem.photos[i]) {
+          element.querySelectorAll('.produce__quarter-img')[i].style.backgroundImage = 'url(' + currentDataItem.photos[i] + ')';
+        } else {
+          element.querySelectorAll('.produce__input')[i].setAttribute('disabled', 'disabled');
+        }
+      }
+
+      for (var j = 0; j < 4; j++) {
+        element.querySelectorAll('.produce__quarter-img')[j].addEventListener('click', function(evt) {
+          var url = evt.target.style.backgroundImage.split('"')[1];
+
+          if (url) {
+            evt.target.parentElement.previousElementSibling.children["0"].src = url;
+          }
+        });
+      }
+
+      element.querySelector('.produce__info-title').textContent = currentDataItem.title;
+      element.querySelector('.produce__info-rating').innerHTML = calculateStars(currentDataItem);
+      element.querySelector('.produce__info-price').textContent = currentDataItem.price + CURRENY_RU;
+      element.querySelector('.desc-produce__text').textContent = currentDataItem.description;
+      element.querySelector('.produce__button').textContent = 'Добавить в корзину';
+      element.querySelector('.produce__info-socials-title').textContent = 'Репостнуть запись:';
+      element.querySelector('.produce__info-socials-item--vk').textContent = 'VK';
+
+      element.querySelector('.produce__tabs-label--desc').textContent = 'Описание';
+      element.querySelector('.produce__tabs-label--info').textContent = 'Информация';
+      element.querySelector('.produce__tabs-label--reviews').textContent = 'Отзывы';
+
+      element.querySelector('.produce__tabs-item-text-desc').textContent = currentDataItem.description;
+      element.querySelector('.produce__tabs-item-info--title-brand').textContent = 'Повары';
+      element.querySelector('.produce__tabs-item-info--brand').textContent = currentDataItem.creator;
+      element.querySelector('.produce__tabs-item-info--title-weight').textContent = 'Вес';
+      element.querySelector('.produce__tabs-item-info--weight').textContent = currentDataItem.weight;
+      element.querySelector('.produce__tabs-item-info--title-calories').textContent = 'Килокалории';
+      element.querySelector('.produce__tabs-item-info--calories').textContent = currentDataItem.calories;
+      element.querySelector('.produce__tabs-item-reviews').textContent = currentDataItem.reviews;
+
+      fragment.appendChild(element);
+      container.appendChild(fragment);
+    } else {
+      window.location.href = '404.html';
+    }
   }
 
   xhr.addEventListener('load', function() {

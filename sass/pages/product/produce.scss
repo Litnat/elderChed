@@ -70,6 +70,7 @@
 	display: block;
 	width: 100%;
 	height: auto;
+	max-height: 645px;
 	object-fit: cover;
 }
 
@@ -98,7 +99,7 @@
 	border: 1px solid #cccccc;
 	cursor: pointer;
 
-	background: transparent url('http://cdn.fishki.net/upload/post/2017/03/19/2245758/tn/06-funny-cat-wallpapercat-wallpaper.jpg') center no-repeat;
+	background: transparent url('') center no-repeat;
 	background-size: cover;
 	filter: grayscale(100%);
 

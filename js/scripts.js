@@ -4,6 +4,7 @@
   var cartContent = document.querySelector('.cart-widget__content');
   var topButtonCart = document.querySelector('.cart__item');
   var closeCartButton = document.querySelector('.cart-widget__close-btn');
+  var continueShopping = document.querySelector('.cart-widget__continue-product');
 
   function togglCartWidget(actionFirst, actionSecond) {
     openCartButton.classList.remove('cart-widget__toggle-btn--' + actionFirst);
@@ -26,7 +27,12 @@
 
   openCartButton.addEventListener('click', handlerCartWidget);
   topButtonCart.addEventListener('click', handlerCartWidget);
+
   closeCartButton.addEventListener('click', function() {
+    togglCartWidget('active', 'hide');
+  });
+
+  continueShopping.addEventListener('click', function() {
     togglCartWidget('active', 'hide');
   });
 })();
@@ -167,6 +173,8 @@
   var otherProduceContainer = document.querySelector('.other-produce__container');
   var produceWrapper = document.querySelector('.produce-wrapper');
 
+  var filtersLatestProducts = document.querySelectorAll('.latest-products__label');
+
   //catalog
   var productCatalogContainer = document.querySelector('.products__content');
 
@@ -178,6 +186,7 @@
   var fragment = document.createDocumentFragment();
 
   var CURRENY_RU = ' Руб.';
+  var PRODUCT_LINK = 'product.html?id=';
 
   var xhr = new XMLHttpRequest();
 
@@ -214,6 +223,7 @@
       }
 
       element.querySelector('.card-product__bar-link--detail').textContent = 'Показать товар';
+      element.querySelector('.card-product__bar-link--detail').href = PRODUCT_LINK + item.id;
       element.querySelector('.card-product__bar-link--buy').textContent = 'В корзину';
 
 
@@ -233,7 +243,9 @@
 
       element.querySelector('.rating-product').setAttribute('data-categories', item.type);
       element.querySelector('.rating-product').setAttribute('data-id', item.id);
+      element.querySelector('.rating-product').setAttribute('data-id', item.id);
 
+      element.querySelector('.rating-product').href = PRODUCT_LINK + item.id;
       element.querySelector('.rating-product__img').src = item.photos[0];
       element.querySelector('.rating-product__name').textContent = item.title;
       element.querySelector('.rating-product__price').textContent = item.price + CURRENY_RU;
@@ -268,7 +280,7 @@
   function addDetailProduct(items, container) {
     var checMoreThanZero = location.search.split('?id=')[1] >= 0;
     var checkSearchItem = location.search.split('=')[0] === '?id';
-    var checkLengthSearchItem = location.search.length > 0;
+    var checkLengthSearchItem = (location.search.length > 0) && (location.search.split('?id=')[1] < items.length);
 
     if (checkLengthSearchItem && checkSearchItem && checMoreThanZero) {
       var currentSearchItem = location.search.split('?id=')[1];
@@ -326,6 +338,49 @@
     }
   }
 
+  function sortLatestProduct(listCards, currentFilter) {
+    for (var j = 0; j < listCards.children.length; j++) {
+      listCards.children[j].style.display = 'flex';
+      if (listCards.children[j].dataset.categories !== currentFilter) {
+        listCards.children[j].style.display = 'none';
+      }
+    }
+  }
+
+  function toggleLatestProduct(filters, listCards) {
+    var filter = null;
+    console.dir(listCards.children);
+
+    for (var i = 0; i < filters.length; i++) {
+      filters[i].addEventListener('click', function(evt) {
+        var filter = evt.target.htmlFor.split('latest-products-')[1];
+
+        switch (filter) {
+          case 'all':
+            for (var j = 0; j < listCards.children.length; j++) {
+              listCards.children[j].style.display = 'flex';
+            }
+            break;
+          case 'pizza':
+            sortLatestProduct(listCards, 'pizza');
+            break;
+          case 'burgers':
+            sortLatestProduct(listCards, 'burgers');
+            break;
+          case 'icecream':
+            sortLatestProduct(listCards, 'icecream');
+            break;
+          case 'drink':
+            sortLatestProduct(listCards, 'drink');
+            break;
+          case 'snack':
+            sortLatestProduct(listCards, 'snack');
+            break;
+        }
+      });
+    }
+  }
+
   xhr.addEventListener('load', function() {
     var data = JSON.parse(xhr.response);
 
@@ -333,9 +388,15 @@
       case '/index.html':
         addCardElements(data, productLatestContainer, 10);
         addRatingProduct(data, featuredProductContent, 12);
+        toggleLatestProduct(filtersLatestProducts, productLatestContainer);
+        break;
+      case '/':
+        addCardElements(data, productLatestContainer, 10);
+        addRatingProduct(data, featuredProductContent, 12);
+        toggleLatestProduct(filtersLatestProducts, productLatestContainer);
         break;
       case '/catalog.html':
-        addCardElements(data, productCatalogContainer, 15);
+        addCardElements(data, productCatalogContainer, 12);
         addTopRatingProduct(data, ratedProductList, 3);
         break;
       case '/product.html':

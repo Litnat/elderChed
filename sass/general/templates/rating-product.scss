@@ -1,5 +1,16 @@
 .rating-product {
   max-width: 170px;
+  text-decoration: none;
+
+  transition: opacity .3s;
+
+  #{&}:hover {
+    opacity: .7;
+  }
+
+  #{&}:active {
+    opacity: .5;
+  }
 }
 
 .rating-product__inner {

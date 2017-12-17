@@ -10,7 +10,7 @@
   "description": "У нас всегда качественный товар, отборная курица",
   "creator": "Старина Чед",
   "weight": "450 грам",
-  "calories": 100,
+  "calories": "100 ккал",
   "reviews": "Отлично и вкусно!"
 },
 {
@@ -25,7 +25,7 @@
   "description": "Мороженое из холодильника",
   "creator": "Старина Чед",
   "weight": "150 грам",
-  "calories": 30,
+  "calories": "30 ккал",
   "reviews": "Отлично и Отлично!"
 },
 {
@@ -40,6 +40,36 @@
   "description": "Плавный, нежный сыр",
   "creator": "Старина Чед",
   "weight": "650 грам",
-  "calories": 600,
+  "calories": "600 ккал",
   "reviews": "вкусно и вкусно!"
-  }]
+  },
+{
+  "id": 3,
+  "type": "pizza",
+  "title": "Пицца с сыром",
+  "price": 900,
+  "oldPrice": "",
+  "photos": ["https://pp.userapi.com/c841023/v841023903/345ac/ZqlVvlqNHxI.jpg", "https://pp.userapi.com/c840120/v840120438/163b8/QYbQdl0-4DM.jpg"],
+  "stars": 2,
+  "date_added": ["03", "06", "2017"],
+  "description": "Плавный, нежный сыр с сыром",
+  "creator": "Старина Чед",
+  "weight": "800 грам",
+  "calories": "1500 ккал",
+  "reviews": "вкусно и вкусно и всё!"
+  },
+{
+  "id": 4,
+  "type": "pizza",
+  "title": "Пицца 'Диабло'",
+  "price": 350,
+  "oldPrice": "",
+  "photos": ["https://pp.userapi.com/c639717/v639717384/421fe/Mi7t1aFHwNk.jpg"],
+  "stars": 5,
+  "date_added": ["03", "06", "2017"],
+  "description": "Салями, окорок копчёный, перец чили, соус, сыр",
+  "creator": "",
+  "weight": "540 грам",
+  "calories": "",
+  "reviews": "C удовольствием поели пиццувсей семьей, на всех хватило и еще осталось!"
+}]

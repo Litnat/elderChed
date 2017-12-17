@@ -56,15 +56,19 @@
 	color: $color-green;
 }
 
-#latest-products-icecream:checked ~ .latest-products__filter .latest-products__label:nth-child(3) {
+#latest-products-burgers:checked ~ .latest-products__filter .latest-products__label:nth-child(3) {
 	color: $color-green;
 }
 
-#latest-products-drink:checked ~ .latest-products__filter .latest-products__label:nth-child(4) {
+#latest-products-icecream:checked ~ .latest-products__filter .latest-products__label:nth-child(4) {
 	color: $color-green;
 }
 
-#latest-products-snack:checked ~ .latest-products__filter .latest-products__label:nth-child(5) {
+#latest-products-drink:checked ~ .latest-products__filter .latest-products__label:nth-child(5) {
+	color: $color-green;
+}
+
+#latest-products-snack:checked ~ .latest-products__filter .latest-products__label:nth-child(6) {
 	color: $color-green;
 }
 

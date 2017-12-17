@@ -143,6 +143,7 @@
 
         <input type="radio" id="latest-products-all" class="latest-products__input" name="latest-products__toggle" checked>
         <input type="radio" id="latest-products-pizza" class="latest-products__input" name="latest-products__toggle">
+        <input type="radio" id="latest-products-burgers" class="latest-products__input" name="latest-products__toggle">
         <input type="radio" id="latest-products-icecream" class="latest-products__input" name="latest-products__toggle">
         <input type="radio" id="latest-products-drink" class="latest-products__input" name="latest-products__toggle">
         <input type="radio" id="latest-products-snack" class="latest-products__input" name="latest-products__toggle">
@@ -150,6 +151,7 @@
         <div class="latest-products__filter">
           <label class="latest-products__label" for="latest-products-all">Все продукты</label>
           <label class="latest-products__label" for="latest-products-pizza">Пицца</label>
+          <label class="latest-products__label" for="latest-products-burgers">Бургеры</label>
           <label class="latest-products__label" for="latest-products-icecream">Мороженое</label>
           <label class="latest-products__label" for="latest-products-drink">Напитки</label>
           <label class="latest-products__label" for="latest-products-snack">Закуски</label>
@@ -311,7 +313,7 @@
             <label class="featured-products__label" for="featured-products-popular">Популярные</label>
             <label class="featured-products__label" for="featured-products-new">Новые</label>
             <label class="featured-products__label" for="featured-products-sale">Скидки</label>
-            <label class="featured-products__label" for="featured-products-offer">Специальное предложение</label>
+            <!-- <label class="featured-products__label" for="featured-products-offer">Специальное предложение</label> -->
           </div>
 
           <div class="featured-products__content">
@@ -500,7 +502,7 @@
 
     <!-- Шаблон карточки рейтинкового продукта без ховера -->
     <template id="rating-product-template" style="display: none">
-      <div class="rating-product">
+      <a class="rating-product" href>
         <div class="rating-product__image-box">
           <img class="rating-product__img" src alt>
         </div>
@@ -509,7 +511,7 @@
           <p class="rating-product__name"></p>
           <p class="rating-product__price"></p>
         </div>
-      </div>
+      </a>
     </template>
 
     <!-- Шаблон карточки обсуждения из vk -->

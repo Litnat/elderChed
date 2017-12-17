@@ -698,13 +698,16 @@ body {
 #latest-products-pizza:checked ~ .latest-products__filter .latest-products__label:nth-child(2) {
   color: #80b435; }
 
-#latest-products-icecream:checked ~ .latest-products__filter .latest-products__label:nth-child(3) {
+#latest-products-burgers:checked ~ .latest-products__filter .latest-products__label:nth-child(3) {
   color: #80b435; }
 
-#latest-products-drink:checked ~ .latest-products__filter .latest-products__label:nth-child(4) {
+#latest-products-icecream:checked ~ .latest-products__filter .latest-products__label:nth-child(4) {
   color: #80b435; }
 
-#latest-products-snack:checked ~ .latest-products__filter .latest-products__label:nth-child(5) {
+#latest-products-drink:checked ~ .latest-products__filter .latest-products__label:nth-child(5) {
+  color: #80b435; }
+
+#latest-products-snack:checked ~ .latest-products__filter .latest-products__label:nth-child(6) {
   color: #80b435; }
 
 .latest-products__content {
@@ -2601,7 +2604,13 @@ body {
   font-size: 14px; }
 
 .rating-product {
-  max-width: 170px; }
+  max-width: 170px;
+  text-decoration: none;
+  transition: opacity .3s; }
+  .rating-product:hover {
+    opacity: .7; }
+  .rating-product:active {
+    opacity: .5; }
 
 .rating-product__inner {
   padding: 22px 5px 15px 5px;

@@ -6,6 +6,11 @@
   var closeCartButton = document.querySelector('.cart-widget__close-btn');
   var continueShopping = document.querySelector('.cart-widget__continue-product');
 
+  /**
+   * Переключает состояние Корзины в зависимости от текущего состояния
+   * @param {String} actionFirst состояние переключателя 'Корзины'
+   * @param {String} actionSecond состояние 'Корзины'
+   */
   function togglCartWidget(actionFirst, actionSecond) {
     openCartButton.classList.remove('cart-widget__toggle-btn--' + actionFirst);
     cartContent.classList.remove('cart-widget__content--' + actionFirst);
@@ -62,7 +67,7 @@
   menuButton.addEventListener('click', handlerStateNavigation);
 })();
 
-// catalog-widget
+// catalog-widget + filter
 (function() {
   var btnFilterCards = document.querySelector('.products__filter-btn--cards');
   var btnFilterColumns = document.querySelector('.products__filter-btn--columns');
@@ -103,6 +108,13 @@
 (function() {
   var question = document.querySelectorAll('.faq__item-title');
 
+  /**
+   * Устанавливает переданные параметры в элемент
+   * @param {String} mh Максимальная высота элемента
+   * @param {Number} opac Прозрачность элемента
+   * @param {Number} time Время анимации
+   * @param {Object} element Текущий элемент
+   */
   function setSizes(mh, opac, time, element) {
     setTimeout(function() {
       element.style.maxHeight = mh;
@@ -127,6 +139,14 @@
 
 // catalog-filter animate-mobile
 (function() {
+
+  /**
+   * Устанавливает переданные параметры в элемент
+   * @param {String} mh Максимальная высота элемента
+   * @param {Number} opac Прозрачность элемента
+   * @param {Number} time Время анимации
+   * @param {Object} element Текущий элемент
+   */
   function setSizes(mh, opac, time, element) {
     setTimeout(function() {
       element.style.maxHeight = mh;
@@ -142,6 +162,9 @@
     }
   }
 
+  /**
+   * @param {Object} mediaMobile текущий вьюпорт
+   */
   function widthChange(mediaMobile) {
     if (mediaMobile.matches) {
       var catalogFilterTitle = document.querySelectorAll('.catalog__controlls-title');
@@ -174,6 +197,7 @@
   var produceWrapper = document.querySelector('.produce-wrapper');
 
   var filtersLatestProducts = document.querySelectorAll('.latest-products__label');
+  var filtersFeaturedProducts = document.querySelectorAll('.featured-products__label');
 
   //catalog
   var productCatalogContainer = document.querySelector('.products__content');
@@ -190,6 +214,10 @@
 
   var xhr = new XMLHttpRequest();
 
+  /**
+    * Добавляет звёздочки, количество берётся из массива карточки
+    * @param {Object} item текущая карточка
+    */
   function calculateStars(item) {
     var collectionStars = [];
     var starsHTML = null;
@@ -201,6 +229,12 @@
     return starsHTML;
   }
 
+  /**
+    * Добавляет элементы в контейнер
+    * @param {Object} items Массив элементов
+    * @param {Object} container Контейнер, куда добавляем элементы
+    * @param {Number} howMany сколько элементов добавляем
+    */
   function addCardElements(items, container, howMany) {
     var item = null;
     templateCardProduct = document.querySelector('#card-product-template').content;
@@ -233,9 +267,23 @@
     container.appendChild(fragment);
   }
 
+  /**
+    * Добавляет рейтинговые элементы в контейнер
+    * @param {Object} items Массив элементов
+    * @param {Object} container Контейнер, куда добавляем элементы
+    * @param {Number} howMany сколько элементов добавляем
+    */
   function addRatingProduct(items, container, howMany) {
     var item = null;
+    var timeLists = [];
     templateRatingProduct = document.querySelector('#rating-product-template').content;
+
+    for (var j = 0; j < items.length; j++) {
+      var timeItems = items[j].date_added.split('/');
+      var time = new Date(timeItems[2], timeItems[1], timeItems[0]) / 1000;
+
+      timeLists.push(time);
+    }
 
     for (var i = 0; i < items.length && i < howMany; i++) {
       var element = templateRatingProduct.cloneNode(true);
@@ -243,7 +291,10 @@
 
       element.querySelector('.rating-product').setAttribute('data-categories', item.type);
       element.querySelector('.rating-product').setAttribute('data-id', item.id);
-      element.querySelector('.rating-product').setAttribute('data-id', item.id);
+      element.querySelector('.rating-product').setAttribute('data-stars', item.stars);
+      element.querySelector('.rating-product').setAttribute('data-added', item.date_added);
+      element.querySelector('.rating-product').setAttribute('data-seconds', timeLists[i]);
+      element.querySelector('.rating-product').setAttribute('data-sale', item.sale);
 
       element.querySelector('.rating-product').href = PRODUCT_LINK + item.id;
       element.querySelector('.rating-product__img').src = item.photos[0];
@@ -256,6 +307,12 @@
     container.appendChild(fragment);
   }
 
+  /**
+    * Добавляет топ элементы в контейнер
+    * @param {Object} items Массив элементов
+    * @param {Object} container Контейнер, куда добавляем элементы
+    * @param {Number} howMany сколько элементов добавляем
+    */
   function addTopRatingProduct(items, container, howMany) {
     var item = null;
     templateTopRatingProduct = document.querySelector('#top-rated-product-template').content;
@@ -277,6 +334,11 @@
     container.appendChild(fragment);
   }
 
+  /**
+    * Добавляет product карточку с внесёнными данными из хеша
+    * @param {Object} items Массив элементов
+    * @param {Object} container Контейнер, куда добавляем элемент
+    */
   function addDetailProduct(items, container) {
     var checMoreThanZero = location.search.split('?id=')[1] >= 0;
     var checkSearchItem = location.search.split('=')[0] === '?id';
@@ -295,6 +357,7 @@
       for (var i = 0; i < 4; i++) {
         if (currentDataItem.photos[i]) {
           element.querySelectorAll('.produce__quarter-img')[i].style.backgroundImage = 'url(' + currentDataItem.photos[i] + ')';
+           element.querySelectorAll('.produce__quarter-img')[i].style.display = 'block';
         } else {
           element.querySelectorAll('.produce__input')[i].setAttribute('disabled', 'disabled');
         }
@@ -331,6 +394,9 @@
       element.querySelector('.produce__tabs-item-info--calories').textContent = currentDataItem.calories;
       element.querySelector('.produce__tabs-item-reviews').textContent = currentDataItem.reviews;
 
+      document.querySelector('.current-page__title').textContent = currentDataItem.title;
+      document.querySelector('.current-page__breadcrumbs-item--active').textContent = currentDataItem.title;
+
       fragment.appendChild(element);
       container.appendChild(fragment);
     } else {
@@ -338,6 +404,11 @@
     }
   }
 
+  /**
+    * Шаблон сортировки LatestProduct
+    * @param {Object} listCards Конейнер с карточками
+    * @param {String} currentFilter Текущий выбранный фильтр
+    */
   function sortLatestProduct(listCards, currentFilter) {
     for (var j = 0; j < listCards.children.length; j++) {
       listCards.children[j].style.display = 'flex';
@@ -347,9 +418,13 @@
     }
   }
 
+  /**
+    * Шаблон сортировки LatestProduct
+    * @param {String} filters Список фильтров
+    * @param {Object} listCards Контейнер с карточками
+    */
   function toggleLatestProduct(filters, listCards) {
     var filter = null;
-    console.dir(listCards.children);
 
     for (var i = 0; i < filters.length; i++) {
       filters[i].addEventListener('click', function(evt) {
@@ -381,6 +456,62 @@
     }
   }
 
+  /**
+    * Показываем популярные карточки
+    * @param {String} dataSet
+    * @param {Object} listCards Контейнер с карточками
+    */
+  function showFeaturedProducts(dataSet, listCards) {
+    var lists = [];
+
+    for (var j = 0; j < listCards.children.length; j++) {
+      lists.push(listCards.children[j]);
+    }
+
+    lists.sort(function(a, b) {
+      return Number(b.dataset[dataSet]) - Number(a.dataset[dataSet]);
+    });
+
+    listCards.innerHTML = '';
+
+    for (var k = 0; k < lists.length; k++) {
+      fragment.appendChild(lists[k]);
+    }
+
+    listCards.appendChild(fragment);
+  }
+
+  /**
+    * Переключаем показ карточек по фильтрам
+    * @param {Object} data объект с карточками
+    * @param {Object} filters Список фильтров
+    * @param {Object} listCards Контейнер с карточками
+    */
+  function toggleFeaturedProduct(data, filters, listCards) {
+    var filter = null;
+
+    showFeaturedProducts('stars', listCards);
+    for (var i = 0; i < filters.length; i++) {
+      filters[i].addEventListener('click', function(evt) {
+        var filter = evt.target.htmlFor.split('featured-products-')[1];
+
+        switch (filter) {
+          case 'popular':
+            showFeaturedProducts('stars', listCards);
+            break;
+          case 'new':
+            showFeaturedProducts('seconds', listCards);
+            break;
+          case 'sale':
+            showFeaturedProducts('sale', listCards);
+            break;
+        }
+      });
+    }
+  }
+
+
+
   xhr.addEventListener('load', function() {
     var data = JSON.parse(xhr.response);
 
@@ -389,6 +520,7 @@
         addCardElements(data, productLatestContainer, 10);
         addRatingProduct(data, featuredProductContent, 12);
         toggleLatestProduct(filtersLatestProducts, productLatestContainer);
+        toggleFeaturedProduct(data, filtersFeaturedProducts, featuredProductContent);
         break;
       case '/':
         addCardElements(data, productLatestContainer, 10);
@@ -408,4 +540,47 @@
 
   xhr.open('GET', 'js/data.json');
   xhr.send();
+})();
+
+// timer
+(function() {
+  if ((location.pathname === '/index.html') || (location.pathname === '/')) {
+    var currentTimerDays = document.querySelector('.sale__timer-num[data-timer="days"]');
+    var currentTimerHours = document.querySelector('.sale__timer-num[data-timer="hours"]');
+    var currentTimerMinutes = document.querySelector('.sale__timer-num[data-timer="minutes"]');
+    var currentTimerSeconds = document.querySelector('.sale__timer-num[data-timer="seconds"]');
+
+    var currentDate = new Date();
+    var timer;
+    var lastDate;
+
+    var last = {
+      years: 2017,
+      months: 12,
+      days: 31,
+      hours: 20,
+      minutes: 00,
+      seconds: 00
+    }
+
+    last.months = last.months - 1;
+    lastDate = new Date(last.years, last.months, last.days, last.hours, last.minutes, last.seconds);
+
+    var commonQuantitySeconds = parseInt((lastDate - currentDate) / 1000);
+
+    function setTimer(quantitySeconds) {
+      currentTimerDays.innerHTML = parseInt((quantitySeconds/3600)/24);
+      currentTimerHours.innerHTML = parseInt((quantitySeconds/3600)%24);
+      currentTimerMinutes.innerHTML = parseInt((quantitySeconds%3600)/60);
+      currentTimerSeconds.innerHTML = parseInt((quantitySeconds%3600)%60);
+    }
+
+    setTimer(commonQuantitySeconds);
+    commonQuantitySeconds = commonQuantitySeconds - 1;
+
+    setInterval(function() {
+      setTimer(commonQuantitySeconds);
+      commonQuantitySeconds = commonQuantitySeconds - 1;
+    }, 1000);
+  }
 })();

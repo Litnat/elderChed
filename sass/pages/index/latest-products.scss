@@ -73,11 +73,15 @@
 }
 
 .latest-products__content {
+	position: relative;
+
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 350px);
 	grid-gap: 30px;
 	justify-content: center;
 	margin-bottom: 60px;
+
+	transition: all .3s;
 
 	@media #{$mobile-book} {
 		grid-template-columns: repeat(auto-fit, 100%);

@@ -711,13 +711,15 @@ body {
   color: #80b435; }
 
 .latest-products__content {
+  position: relative;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (350px)[auto-fit];
       grid-template-columns: repeat(auto-fit, 350px);
   grid-gap: 30px;
   justify-content: center;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+  transition: all .3s; }
   @media screen and (max-width: 414px) {
     .latest-products__content {
       -ms-grid-columns: (100%)[auto-fit];
@@ -1562,7 +1564,7 @@ body {
           grid-template-columns: repeat(auto-fit, 50%); } }
 
 .produce__quarter-img {
-  display: block;
+  display: none;
   width: 200px;
   height: 200px;
   font-size: 0;

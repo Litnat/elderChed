@@ -569,10 +569,12 @@
     var commonQuantitySeconds = parseInt((lastDate - currentDate) / 1000);
 
     function setTimer(quantitySeconds) {
-      currentTimerDays.innerHTML = parseInt((quantitySeconds/3600)/24);
-      currentTimerHours.innerHTML = parseInt((quantitySeconds/3600)%24);
-      currentTimerMinutes.innerHTML = parseInt((quantitySeconds%3600)/60);
-      currentTimerSeconds.innerHTML = parseInt((quantitySeconds%3600)%60);
+      if (quantitySeconds > 0) {
+        currentTimerDays.innerHTML = parseInt((quantitySeconds/3600)/24);
+        currentTimerHours.innerHTML = parseInt((quantitySeconds/3600)%24);
+        currentTimerMinutes.innerHTML = parseInt((quantitySeconds%3600)/60);
+        currentTimerSeconds.innerHTML = parseInt((quantitySeconds%3600)%60);
+      }
     }
 
     setTimer(commonQuantitySeconds);

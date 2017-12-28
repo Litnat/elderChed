@@ -46,3 +46,10 @@
 
   margin: 0;
 }
+
+.rating-product__sale {
+  color: $color-grey;
+  margin-right: 10px;
+  text-decoration: line-through;
+  font-size: 16px;
+}

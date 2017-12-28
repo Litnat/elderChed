@@ -13,12 +13,18 @@
   margin-bottom: 20px;
   padding-left: 18px;
 
+  font-family: 'Roboto Slab';
   font-size: 18px;
   line-height: 1;
   color: $color-default-text;
 
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
   text-decoration: none;
   text-transform: uppercase;
+  outline: none;
 
   #{&}--active {
     color: $color-green;

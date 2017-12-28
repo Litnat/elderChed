@@ -1,6 +1,18 @@
 .top-rated-product {
   display: flex;
   margin-bottom: 15px;
+
+  text-decoration: none;
+
+  transition: opacity .3s;
+
+  #{&}:hover {
+    opacity: .8;
+  }
+
+  #{&}:active {
+    opacity: .6;
+  }
 }
 
 .rated-products__list {

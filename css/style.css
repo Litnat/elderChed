@@ -1273,11 +1273,17 @@ body {
 .categories__item {
   margin-bottom: 20px;
   padding-left: 18px;
+  font-family: 'Roboto Slab';
   font-size: 18px;
   line-height: 1;
   color: #2b2b2b;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
   text-decoration: none;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  outline: none; }
   .categories__item--active {
     color: #80b435; }
 
@@ -1370,6 +1376,9 @@ body {
   font-size: 18px;
   line-height: 1;
   color: #80b435; }
+  @media screen and (max-width: 736px) {
+    .controll-price__bounds {
+      margin-bottom: 15px; } }
 
 .controll-price__button {
   font-family: 'Roboto Slab';
@@ -1387,6 +1396,10 @@ body {
     color: #80b435; }
   .controll-price__button:focus {
     color: #80b435; }
+  @media screen and (max-width: 736px) {
+    .controll-price__button {
+      padding: 5px 8px;
+      margin-bottom: 15px; } }
 
 .products__header {
   display: flex;
@@ -2517,7 +2530,12 @@ body {
 
 .card-product-full__image-box {
   flex: 0 0 36.82433001%;
-  height: 300px; }
+  height: 300px;
+  transition: opacity .3s; }
+  .card-product-full__image-box:hover {
+    opacity: .8; }
+  .card-product-full__image-box:active {
+    opacity: .7; }
   @media screen and (max-width: 1220px) {
     .card-product-full__image-box {
       height: 200px; } }
@@ -2528,7 +2546,7 @@ body {
 
 .card-product-full__img {
   display: block;
-  max-width: 100%;
+  width: 100%;
   height: 100%;
   background-color: #ccc;
   object-fit: cover;
@@ -2642,9 +2660,21 @@ body {
   font-weight: 900;
   margin: 0; }
 
+.rating-product__sale {
+  color: #666666;
+  margin-right: 10px;
+  text-decoration: line-through;
+  font-size: 16px; }
+
 .top-rated-product {
   display: flex;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  text-decoration: none;
+  transition: opacity .3s; }
+  .top-rated-product:hover {
+    opacity: .8; }
+  .top-rated-product:active {
+    opacity: .6; }
 
 @media screen and (max-width: 736px) {
   .rated-products__list {

@@ -114,7 +114,7 @@
             <div class="products__header">
               <button class="products__filter-btn  products__filter-btn--cards  products__filter-btn--cards-active">Фильтр "Вывести карточками"</button>
               <button class="products__filter-btn  products__filter-btn--columns">Фильтр "Вывести списком с описанием продукта"</button>
-              <p class="products__number-of">Показано 1-10 из 50 по результату</p>
+              <p class="products__number-of"><!-- Показано {min-max} из {full} по результату --></p>
             </div>
 
             <div class="products__content  products__content--grid">
@@ -126,11 +126,6 @@
 
               <div class="products__paginator-list">
                 <a class="products__paginator-item  products__paginator-item--active" href>1</a>
-                <a class="products__paginator-item" href>2</a>
-                <a class="products__paginator-item" href>3</a>
-                <a class="products__paginator-item" href>4</a>
-                <a class="products__paginator-item" href>5</a>
-                <a class="products__paginator-item" href>6</a>
               </div>
 
               <button class="products__paginator-arrow  products__paginator-arrow--next">Вперёд</button>
@@ -142,12 +137,12 @@
               <h3 class="catalog__controlls-title">Категории</h3>
 
               <div class="categories__list">
-                <a class="categories__item  categories__item--active" href>Все</a>
-                <a class="categories__item" href>Пицца</a>
-                <a class="categories__item" href>Бургеры</a>
-                <a class="categories__item" href>Напитки</a>
-                <a class="categories__item" href>Мороженое</a>
-                <a class="categories__item" href>Закуски</a>
+                <button class="categories__item  categories__item--active" data-categories-item="all">Все</button>
+                <button class="categories__item" data-categories-item="pizza">Пицца</button>
+                <button class="categories__item" data-categories-item="burgers">Бургеры</button>
+                <button class="categories__item" data-categories-item="icecream">Мороженое</button>
+                <button class="categories__item" data-categories-item="drink">Напитки</button>
+                <button class="categories__item" data-categories-item="snack">Закуски</button>
               </div>
             </div>
 
@@ -252,18 +247,17 @@
     <!-- Шаблон карточки продукта фильтр-2 -->
     <template id="card-product-full-template" style="display: none">
       <div class="card-product-full">
-        <div class="card-product-full__image-box">
+        <a class="card-product-full__image-box" href>
           <img class="card-product-full__img" src alt>
-        </div>
+        </a>
 
         <div class="card-product-full__info">
           <p class="card-product-full__info-title"></p>
 
           <div class="card-product-full__info-stars  star">
-            <span class="star__item"></span>
           </div>
 
-          <p class="card-product-full__info-price">350 руб.</p>
+          <p class="card-product-full__info-price"></p>
 
           <p class="card-product-full__info-desc"></p>
 
@@ -272,7 +266,7 @@
           </div>
 
           <div class="card-product-full__info-socials">
-            <p class="card-product-full__info-socials-title">Репостнуть в социальную сеть:</p>
+            <p class="card-product-full__info-socials-title"></p>
 
             <span class="card-product-full__info-socials-item  card-product-full__info-socials-item--vk"></span>
           </div>
@@ -282,7 +276,7 @@
 
     <!-- Шаблон карточек "Топ рейтинговых продуктов" -->
     <template id="top-rated-product-template" style="display: none">
-      <div class="top-rated-product">
+      <a class="top-rated-product" href>
         <div class="top-rated-product__image-box">
           <img class="top-rated-product__img" src alt>
         </div>
@@ -293,7 +287,7 @@
           <div class="top-rated-product__info-star  star">
           </div>
         </div>
-      </div>
+      </a>
     </template>
 
     <!-- Шаблон карточки в виджете корзины -->

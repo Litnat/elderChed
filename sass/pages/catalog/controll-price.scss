@@ -114,6 +114,10 @@
   font-size: 18px;
   line-height: 1;
   color: $color-green;
+
+  @media #{$mobile} {
+    margin-bottom: 15px;
+  }
 }
 
 .controll-price__button {
@@ -138,5 +142,10 @@
 
   #{&}:focus {
     color: $color-green;
+  }
+
+  @media #{$mobile} {
+    padding: 5px 8px;
+    margin-bottom: 15px;
   }
 }

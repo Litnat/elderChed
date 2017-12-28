@@ -67,43 +67,6 @@
   menuButton.addEventListener('click', handlerStateNavigation);
 })();
 
-// catalog-widget + filter
-(function() {
-  var btnFilterCards = document.querySelector('.products__filter-btn--cards');
-  var btnFilterColumns = document.querySelector('.products__filter-btn--columns');
-
-
-  /**
-   * @param {Object} oppositeBtn Активный фильтр
-   * @param {Object} btnFirst Предыдущая кнопка с фильтром
-   * @param {Object} btnSecond Новая кнопка с фильтром
-   * @param {String} grid
-   * @param {String} filterFirst2
-   * @param {String} filterSecond
-   */
-  function toggleCatalogFilter(oppositeBtn, btnFirst, btnSecond, grid, filterFirst, filterSecond) {
-    var btnFilter = oppositeBtn;
-    var oldFilter = btnFirst;
-    var newFilter = btnSecond;
-    var stateActiveFilter = btnFilter.classList.contains('products__filter-btn--' + grid + '-active');
-
-    if (stateActiveFilter) {
-      oldFilter.classList.remove('products__filter-btn--' + filterFirst + '-active');
-      newFilter.classList.add('products__filter-btn--' + filterSecond + '-active');
-    }
-  }
-
-  if ((btnFilterCards !== null) && (btnFilterColumns !== null)) {
-    btnFilterColumns.addEventListener('click', function() {
-      toggleCatalogFilter(btnFilterCards, btnFilterCards, btnFilterColumns,'cards', 'cards', 'columns');
-    });
-
-    btnFilterCards.addEventListener('click', function() {
-      toggleCatalogFilter(btnFilterColumns, btnFilterColumns, btnFilterCards,'columns', 'columns', 'cards');
-    });
-  }
-})();
-
 // FAQ-acc
 (function() {
   var question = document.querySelectorAll('.faq__item-title');
@@ -201,16 +164,21 @@
 
   //catalog
   var productCatalogContainer = document.querySelector('.products__content');
+  var btnFilterCards = document.querySelector('.products__filter-btn--cards');
+  var btnFilterColumns = document.querySelector('.products__filter-btn--columns');
+  var filtersCategoriesProducts = document.querySelectorAll('.categories__item');
 
   var templateCardProduct = null;
   var templateRatingProduct = null;
   var templateTopRatingProduct = null;
   var templateProduceTemplate = null;
+  var templateCardProductFull = null;
 
   var fragment = document.createDocumentFragment();
 
   var CURRENY_RU = ' Руб.';
   var PRODUCT_LINK = 'product.html?id=';
+  var PAGE = '?page='
 
   var xhr = new XMLHttpRequest();
 
@@ -239,32 +207,88 @@
     var item = null;
     templateCardProduct = document.querySelector('#card-product-template').content;
 
+    container.innerHTML = '';
+
+    items.sort(function(a, b) {
+      return a.id - b.id;
+    });
+
     for (var i = 0; i < items.length && i < howMany; i++) {
-      var element = templateCardProduct.cloneNode(true);
-      item = items[i];
 
-      element.querySelector('.card-product').setAttribute('data-categories', item.type);
-      element.querySelector('.card-product').setAttribute('data-id', item.id);
-      element.querySelector('.card-product').style.background = 'url(' + item.photos[0] + ') center no-repeat';
-      element.querySelector('.card-product').style.backgroundSize = 'cover';
-
-      element.querySelector('.card-product__name').textContent = item.title;
-
-      if (item.oldPrice > 0) {
-        element.querySelector('.card-product__price').innerHTML = '<span class="card-product__sale">'+ item.oldPrice + CURRENY_RU + '</span>' + item.price + CURRENY_RU;
-      } else {
-        element.querySelector('.card-product__price').innerHTML = item.price + CURRENY_RU;
-      }
-
-      element.querySelector('.card-product__bar-link--detail').textContent = 'Показать товар';
-      element.querySelector('.card-product__bar-link--detail').href = PRODUCT_LINK + item.id;
-      element.querySelector('.card-product__bar-link--buy').textContent = 'В корзину';
-
+      element = createCardElement(items, i);
 
       fragment.appendChild(element);
     }
 
     container.appendChild(fragment);
+  }
+
+  function createCardElement(items, i) {
+    var element = templateCardProduct.cloneNode(true);
+
+    items.sort(function(a, b) {
+      return a.id - b.id;
+    });
+
+    item = items[i];
+
+    element.querySelector('.card-product').setAttribute('data-categories', item.type);
+    element.querySelector('.card-product').setAttribute('data-id', item.id);
+    element.querySelector('.card-product').style.background = 'url(' + item.photos[0] + ') center no-repeat';
+    element.querySelector('.card-product').style.backgroundSize = 'cover';
+
+    element.querySelector('.card-product__name').textContent = item.title;
+
+    if (item.oldPrice > 0) {
+      element.querySelector('.card-product__price').innerHTML = '<span class="card-product__sale">'+ item.oldPrice + CURRENY_RU + '</span>' + item.price + CURRENY_RU;
+    } else {
+      element.querySelector('.card-product__price').innerHTML = item.price + CURRENY_RU;
+    }
+
+    element.querySelector('.card-product__bar-link--detail').textContent = 'Показать товар';
+    element.querySelector('.card-product__bar-link--detail').href = PRODUCT_LINK + item.id;
+    element.querySelector('.card-product__bar-link--buy').textContent = 'В корзину';
+
+    return element;
+  }
+
+  function addColumnsElements(items, container, howMany) {
+    var item = null;
+
+    items.sort(function(a, b) {
+      return a.id - b.id;
+    });
+
+    templateCardProductFull = document.querySelector('#card-product-full-template').content;
+    container.innerHTML = '';
+
+    for (var i = 0; i < items.length && i < howMany; i++) {
+      element = createColumnElement(items, i);
+
+      fragment.appendChild(element);
+    }
+
+    container.appendChild(fragment);
+  }
+
+  function createColumnElement(items, i) {
+      var element = templateCardProductFull.cloneNode(true);
+      item = items[i];
+
+      element.querySelector('.card-product-full').setAttribute('data-categories', item.type);
+      element.querySelector('.card-product-full').setAttribute('data-id', item.id);
+      element.querySelector('.card-product-full__image-box').href = PRODUCT_LINK + item.id;
+      element.querySelector('.card-product-full__img').src = item.photos[0];
+      element.querySelector('.card-product-full__img').alt = item.title + ' / ' + item.description;
+      element.querySelector('.card-product-full__info-title').textContent = item.title;
+      element.querySelector('.card-product-full__info-stars').innerHTML = calculateStars(item);
+      element.querySelector('.card-product-full__info-price').textContent = item.price + CURRENY_RU;
+      element.querySelector('.card-product-full__info-desc').textContent = item.description;
+      element.querySelector('.card-product-full__info-button').textContent = 'Добавить в корзину'
+      element.querySelector('.card-product-full__info-socials-title').textContent = 'Репостнуть в социальну сеть: ';
+      element.querySelector('.card-product-full__info-socials-item').textContent = 'VK';
+
+      return element;
   }
 
   /**
@@ -299,7 +323,12 @@
       element.querySelector('.rating-product').href = PRODUCT_LINK + item.id;
       element.querySelector('.rating-product__img').src = item.photos[0];
       element.querySelector('.rating-product__name').textContent = item.title;
-      element.querySelector('.rating-product__price').textContent = item.price + CURRENY_RU;
+      
+      if (item.sale > 0 && typeof item.sale === 'number') {
+        element.querySelector('.rating-product__price').innerHTML = '<span class="rating-product__sale">' + item.sale + '%</span>' +  item.price + CURRENY_RU;
+      } else {
+        element.querySelector('.rating-product__price').innerHTML = item.price + CURRENY_RU;
+      }
 
       fragment.appendChild(element);
     }
@@ -317,12 +346,17 @@
     var item = null;
     templateTopRatingProduct = document.querySelector('#top-rated-product-template').content;
 
+    items.sort(function(a, b) {
+      return b.stars - a.stars;
+    });
+
     for (var i = 0; i < items.length && i < howMany; i++) {
       var element = templateTopRatingProduct.cloneNode(true);
       item = items[i];
 
       element.querySelector('.top-rated-product').setAttribute('data-categories', item.type);
       element.querySelector('.top-rated-product').setAttribute('data-id', item.id);
+      element.querySelector('.top-rated-product').href = PRODUCT_LINK + item.id;
       element.querySelector('.top-rated-product__img').src = item.photos[0];
       element.querySelector('.top-rated-product__info-title').textContent = item.title;
       element.querySelector('.top-rated-product__info-price').textContent = item.price + CURRENY_RU;
@@ -405,17 +439,74 @@
   }
 
   /**
-    * Шаблон сортировки LatestProduct
+    * Шаблон сортировки LatestProduct, сперва очищает холст, потом добавляет контент
+    * @param {Object} data Элементы
     * @param {Object} listCards Конейнер с карточками
     * @param {String} currentFilter Текущий выбранный фильтр
+    * @param {String} maxSize Максимальный размер контента на странице
     */
-  function sortLatestProduct(listCards, currentFilter) {
-    for (var j = 0; j < listCards.children.length; j++) {
-      listCards.children[j].style.display = 'flex';
-      if (listCards.children[j].dataset.categories !== currentFilter) {
-        listCards.children[j].style.display = 'none';
+  function sortCatalogProduct(page, data, listCards, currentFilter, maxSize) {
+    var collectionCardElements = [];
+    var collectionColumnElements = [];
+    listCards.innerHTML = '';
+
+    if (location.hash !== '#filter=column') {
+      for (var c = 0; c < data.length; c++) {
+        if (data[c].type === currentFilter) {
+          element = createCardElement(data, c);
+
+          collectionCardElements.push(element);
+        }
+      }
+
+      if (page === 'catalog') {
+        for (var v = 0; v < maxSize; v++) {
+          if (collectionCardElements[v]) {
+            fragment.appendChild(collectionCardElements[v]);
+          }
+        }
+      } else {
+        for (var v = 0; v < maxSize - 2; v++) {
+          if (collectionCardElements[v]) {
+            fragment.appendChild(collectionCardElements[v]);
+          }
+        }
+      }
+    } else {
+      for (var b = 0; b < data.length; b++) {
+        if (data[b].type === currentFilter) {
+          element = createColumnElement(data, b);
+
+          collectionColumnElements.push(element);
+        }
+      }
+
+      for (var n = 0; n < maxSize; n++) {
+        if (collectionColumnElements[n]) {
+          fragment.appendChild(collectionColumnElements[n]);
+        }
       }
     }
+
+    listCards.appendChild(fragment);
+    
+    if (page === 'catalog') {
+      checkQuantityCatalogProduct(data, listCards, currentFilter);
+    }
+  }
+
+  function toggleCatalogFilter(evt, filters) {
+    var activeState = 'categories__item--active';
+
+    for (var i = 0; i < filters.length; i++) {
+      for (var j = 0; j < filters[i].classList.length; j++) {
+        if (filters[i].classList[j] === activeState) {
+          filters[i].classList.remove(activeState);
+        }
+      }
+    }
+
+    evt.target.classList.add(activeState);
   }
 
   /**
@@ -423,35 +514,65 @@
     * @param {String} filters Список фильтров
     * @param {Object} listCards Контейнер с карточками
     */
-  function toggleLatestProduct(filters, listCards) {
+  function toggleCatalogProduct(page, data, filters, listCards, callback) {
     var filter = null;
 
     for (var i = 0; i < filters.length; i++) {
       filters[i].addEventListener('click', function(evt) {
-        var filter = evt.target.htmlFor.split('latest-products-')[1];
+        filter = evt.target.dataset['categoriesItem'];
 
         switch (filter) {
           case 'all':
-            for (var j = 0; j < listCards.children.length; j++) {
-              listCards.children[j].style.display = 'flex';
+            listCards.innerHTML = '';
+
+            if (location.hash !== '#filter=column') {
+              if (page === 'catalog') {
+                for (var j = 0; j < data.length && j < 12; j++) {
+                  element = createCardElement(data, j);
+
+                  fragment.appendChild(element);
+                }
+              } else {
+                  for (var j = 0; j < data.length && j < 10; j++) {
+                    element = createCardElement(data, j);
+
+                    fragment.appendChild(element);
+                  }
+                }
+              } else {
+                for (var j = 0; j < data.length && j < 12; j++) {
+                  element = createColumnElement(data, j);
+
+                  fragment.appendChild(element);
+                }
+              }
+
+            listCards.appendChild(fragment);
+
+            if (page === 'catalog') {
+              checkQuantityCatalogProduct(data, listCards, 'all');
             }
             break;
           case 'pizza':
-            sortLatestProduct(listCards, 'pizza');
+            sortCatalogProduct(page, data, listCards, 'pizza', 12);
             break;
           case 'burgers':
-            sortLatestProduct(listCards, 'burgers');
+            sortCatalogProduct(page, data, listCards, 'burgers', 12);
             break;
           case 'icecream':
-            sortLatestProduct(listCards, 'icecream');
+            sortCatalogProduct(page, data, listCards, 'icecream', 12);
             break;
           case 'drink':
-            sortLatestProduct(listCards, 'drink');
+            sortCatalogProduct(page, data, listCards, 'drink', 12);
             break;
           case 'snack':
-            sortLatestProduct(listCards, 'snack');
+            sortCatalogProduct(page, data, listCards, 'snack', 12);
             break;
         }
+
+        if (Boolean(callback)) {
+          callback(evt, filters);
+        };
       });
     }
   }
@@ -510,26 +631,127 @@
     }
   }
 
+  /**
+   * @param {Object} oppositeBtn Активный фильтр
+   * @param {Object} btnFirst Предыдущая кнопка с фильтром
+   * @param {Object} btnSecond Новая кнопка с фильтром
+   * @param {String} grid
+   * @param {String} filterFirst2
+   * @param {String} filterSecond
+   */
+  function toggleItemsCatalogFilter(oppositeBtn, btnFirst, btnSecond, grid, filterFirst, filterSecond) {
+    var btnFilter = oppositeBtn;
+    var oldFilter = btnFirst;
+    var newFilter = btnSecond;
+    var stateActiveFilter = btnFilter.classList.contains('products__filter-btn--' + grid + '-active');
 
+    if (stateActiveFilter) {
+      oldFilter.classList.remove('products__filter-btn--' + filterFirst + '-active');
+      newFilter.classList.add('products__filter-btn--' + filterSecond + '-active');
+    }
+  }
+
+  /**
+   * Показываем товары в зависимости от выбора филтра (колонки или сетка)
+   * @param {Object} data Товары
+   * @param {Object} container Контейнер, куда будем заливать товары по выбранному фильтру
+   */
+  function showFinishedFilterProduct(data, container) {
+    if ((btnFilterCards !== null) && (btnFilterColumns !== null)) {
+      btnFilterColumns.addEventListener('click', function() {
+        var activeState = 'categories__item--active';
+        var categoriesProducts = document.querySelectorAll('.categories__item');
+
+        toggleItemsCatalogFilter(btnFilterCards, btnFilterCards, btnFilterColumns,'cards', 'cards', 'columns');
+
+        for (var i = 0; i < container.classList.length; i++) {
+          if (container.classList[i] === 'products__content--grid') {
+            container.classList.remove('products__content--grid');
+            container.classList.add('products__content--column');
+          }
+        }
+
+        for (var v = 0; v < categoriesProducts.length; v++) {
+          for (var w = 0; w < categoriesProducts[v].classList.length; w++) {
+            if (categoriesProducts[v].classList[w] === activeState) {
+              categoriesProducts[v].classList.remove(activeState);
+            }
+          }
+        }
+
+        categoriesProducts[0].classList.add(activeState);
+
+        addColumnsElements(data, container, 12);
+
+        location.hash = 'filter=column'
+      });
+
+      btnFilterCards.addEventListener('click', function() {
+        var activeState = 'categories__item--active';
+        var categoriesProducts = document.querySelectorAll('.categories__item');
+
+        toggleItemsCatalogFilter(btnFilterColumns, btnFilterColumns, btnFilterCards,'columns', 'columns', 'cards');
+
+        for (var i = 0; i < container.classList.length; i++) {
+          if (container.classList[i] === 'products__content--column') {
+            container.classList.remove('products__content--column');
+            container.classList.add('products__content--grid');
+          }
+        }
+
+        for (var v = 0; v < categoriesProducts.length; v++) {
+          for (var w = 0; w < categoriesProducts[v].classList.length; w++) {
+            if (categoriesProducts[v].classList[w] === activeState) {
+              categoriesProducts[v].classList.remove(activeState);
+            }
+          }
+        }
+
+        categoriesProducts[0].classList.add(activeState);
+
+        addCardElements(data, container, 12);
+
+        location.hash = 'filter=grid'
+      });
+    }
+  }
+
+  function checkQuantityCatalogProduct(data, container, filter) {
+    var textContainer = document.querySelector('.products__number-of');
+    var num = 0;
+
+    for (var i = 0; i < data.length; i++) {
+      if (data[i].type === filter) {
+        num += 1;
+      }
+    }
+
+    if (filter !== 'all') {
+      textContainer.textContent = 'Показано ' + container.children.length + ' из ' + num + ' по результату запроса.';
+    } else {
+      textContainer.textContent = 'Показано ' + container.children.length + ' из ' + data.length + ' по результату запроса.';
+    }
+  }
 
   xhr.addEventListener('load', function() {
     var data = JSON.parse(xhr.response);
 
     switch (location.pathname) {
       case '/index.html':
-        addCardElements(data, productLatestContainer, 10);
-        addRatingProduct(data, featuredProductContent, 12);
-        toggleLatestProduct(filtersLatestProducts, productLatestContainer);
-        toggleFeaturedProduct(data, filtersFeaturedProducts, featuredProductContent);
-        break;
       case '/':
         addCardElements(data, productLatestContainer, 10);
         addRatingProduct(data, featuredProductContent, 12);
-        toggleLatestProduct(filtersLatestProducts, productLatestContainer);
+        toggleCatalogProduct('index', data, filtersLatestProducts, productLatestContainer);
+        toggleFeaturedProduct(data, filtersFeaturedProducts, featuredProductContent);
         break;
       case '/catalog.html':
+        location.hash = '#filter=grid'
+
         addCardElements(data, productCatalogContainer, 12);
         addTopRatingProduct(data, ratedProductList, 3);
+        showFinishedFilterProduct(data, productCatalogContainer); 
+        toggleCatalogProduct('catalog', data, filtersCategoriesProducts, productCatalogContainer, toggleCatalogFilter);
+        checkQuantityCatalogProduct(data, productCatalogContainer, 'all');
         break;
       case '/product.html':
         addDetailProduct(data, produceWrapper);
@@ -555,12 +777,12 @@
     var lastDate;
 
     var last = {
-      years: 2017,
-      months: 12,
-      days: 31,
-      hours: 20,
-      minutes: 00,
-      seconds: 00
+      years: 2018,
+      months: 1,
+      days: 1,
+      hours: 0,
+      minutes: 0,
+      seconds: 0
     }
 
     last.months = last.months - 1;

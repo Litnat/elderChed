@@ -297,10 +297,12 @@
     * @param {Object} container Контейнер, куда добавляем элементы
     * @param {Number} howMany сколько элементов добавляем
     */
-  function addRatingProduct(items, container, howMany) {
+  function addRatingProduct(items, container, howMany, callback) {
     var item = null;
     var timeLists = [];
     templateRatingProduct = document.querySelector('#rating-product-template').content;
+
+    container.innerHTML = '';
 
     for (var j = 0; j < items.length; j++) {
       var timeItems = items[j].date_added.split('/');
@@ -309,8 +311,11 @@
       timeLists.push(time);
     }
 
-    for (var i = 0; i < items.length && i < howMany; i++) {
-      var element = templateRatingProduct.cloneNode(true);
+    callback('stars', container, items);
+  }
+
+  function createRatingProduct(items, i, timeLists) {
+    var element = templateRatingProduct.cloneNode(true);
       item = items[i];
 
       element.querySelector('.rating-product').setAttribute('data-categories', item.type);
@@ -330,10 +335,7 @@
         element.querySelector('.rating-product__price').innerHTML = item.price + CURRENY_RU;
       }
 
-      fragment.appendChild(element);
-    }
-
-    container.appendChild(fragment);
+      return element;
   }
 
   /**
@@ -578,25 +580,51 @@
   }
 
   /**
+    * Добавляет ms в объект data
+    * @param {Object} data Контейнер с карточками
+    */
+  function addTimeMSInData(data) {
+    var timeLists = [];
+
+    for (var j = 0; j < data.length; j++) {
+      var timeItems = data[j].date_added.split('/');
+      var time = new Date(timeItems[2], timeItems[1], timeItems[0]) / 1000;
+
+      timeLists.push(time);
+    }
+
+    for (var t = 0; t < data.length; t++) {
+      data[t].timeMS = timeLists[t];
+    }
+
+    return data;
+  }
+
+  /**
     * Показываем популярные карточки
     * @param {String} dataSet
     * @param {Object} listCards Контейнер с карточками
     */
-  function showFeaturedProducts(dataSet, listCards) {
-    var lists = [];
-
-    for (var j = 0; j < listCards.children.length; j++) {
-      lists.push(listCards.children[j]);
-    }
-
-    lists.sort(function(a, b) {
-      return Number(b.dataset[dataSet]) - Number(a.dataset[dataSet]);
-    });
+  function showFeaturedProducts(dataSet, listCards, data) {
+    var MAX_ITEMS = 12;
 
     listCards.innerHTML = '';
 
-    for (var k = 0; k < lists.length; k++) {
-      fragment.appendChild(lists[k]);
+    if (dataSet === 'seconds') {
+      data = addTimeMSInData(data);
+
+      data.sort(function(a, b) {
+
+        return Number(b.timeMS) - Number(a.timeMS);
+      }); 
+    } else {
+      data.sort(function(a, b) {
+        return b[dataSet] - a[dataSet];
+      }); 
+    }
+
+    for (var k = 0; k < MAX_ITEMS; k++) {
+      fragment.appendChild(createRatingProduct(data, k, listCards));
     }
 
     listCards.appendChild(fragment);
@@ -610,21 +638,20 @@
     */
   function toggleFeaturedProduct(data, filters, listCards) {
     var filter = null;
-
-    showFeaturedProducts('stars', listCards);
+    // showFeaturedProducts('stars', listCards, data);
     for (var i = 0; i < filters.length; i++) {
       filters[i].addEventListener('click', function(evt) {
         var filter = evt.target.htmlFor.split('featured-products-')[1];
 
         switch (filter) {
           case 'popular':
-            showFeaturedProducts('stars', listCards);
+            showFeaturedProducts('stars', listCards, data);
             break;
           case 'new':
-            showFeaturedProducts('seconds', listCards);
+            showFeaturedProducts('seconds', listCards, data);
             break;
           case 'sale':
-            showFeaturedProducts('sale', listCards);
+            showFeaturedProducts('sale', listCards, data);
             break;
         }
       });
@@ -740,7 +767,7 @@
       case '/index.html':
       case '/':
         addCardElements(data, productLatestContainer, 10);
-        addRatingProduct(data, featuredProductContent, 12);
+        addRatingProduct(data, featuredProductContent, 12, showFeaturedProducts);
         toggleCatalogProduct('index', data, filtersLatestProducts, productLatestContainer);
         toggleFeaturedProduct(data, filtersFeaturedProducts, featuredProductContent);
         break;

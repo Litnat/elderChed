@@ -167,6 +167,7 @@
   var btnFilterCards = document.querySelector('.products__filter-btn--cards');
   var btnFilterColumns = document.querySelector('.products__filter-btn--columns');
   var filtersCategoriesProducts = document.querySelectorAll('.categories__item');
+  var paginatorsContainer = document.querySelector('.products__paginator-list');
 
   var templateCardProduct = null;
   var templateRatingProduct = null;
@@ -453,11 +454,10 @@
     listCards.innerHTML = '';
 
     if (location.hash !== '#filter=column') {
-      for (var c = 0; c < data.length; c++) {
-        if (data[c].type === currentFilter) {
-          element = createCardElement(data, c);
-
-          collectionCardElements.push(element);
+      // location.hash = '#filter=grid';
+      for (var m = 0; m < data.length; m++) {
+        if (data[m].type === currentFilter) {
+          collectionCardElements.push(createCardElement(data, m));
         }
       }
 
@@ -475,6 +475,7 @@
         }
       }
     } else {
+      // location.hash = '#filter=column';
       for (var b = 0; b < data.length; b++) {
         if (data[b].type === currentFilter) {
           element = createColumnElement(data, b);
@@ -511,6 +512,40 @@
     evt.target.classList.add(activeState);
   }
 
+  function autoToggleCatalogProduct(page, data, listCards) {
+    listCards.innerHTML = '';
+
+    if (location.hash !== '#filter=column') { 
+      if (page === 'catalog') {
+        // location.hash = '#filter=grid';
+        for (var j = 0; j < data.length && j < 12; j++) {
+          element = createCardElement(data, j);
+
+          fragment.appendChild(element);
+        }
+      } else {
+          for (var j = 0; j < data.length && j < 10; j++) {
+            element = createCardElement(data, j);
+
+            fragment.appendChild(element);
+          }
+        }
+      } else {
+        // location.hash = '#filter=column';
+        for (var j = 0; j < data.length && j < 12; j++) {
+          element = createColumnElement(data, j);
+
+          fragment.appendChild(element);
+        }
+      }
+
+    listCards.appendChild(fragment);
+
+    if (page === 'catalog') {
+      checkQuantityCatalogProduct(data, listCards, 'all');
+    }
+  }
+
   /**
     * Шаблон сортировки LatestProduct
     * @param {String} filters Список фильтров
@@ -519,41 +554,14 @@
   function toggleCatalogProduct(page, data, filters, listCards, callback) {
     var filter = null;
 
+    autoToggleCatalogProduct(page, data, listCards);
+
     for (var i = 0; i < filters.length; i++) {
       filters[i].addEventListener('click', function(evt) {
         filter = evt.target.dataset['categoriesItem'];
-
         switch (filter) {
           case 'all':
-            listCards.innerHTML = '';
-
-            if (location.hash !== '#filter=column') {
-              if (page === 'catalog') {
-                for (var j = 0; j < data.length && j < 12; j++) {
-                  element = createCardElement(data, j);
-
-                  fragment.appendChild(element);
-                }
-              } else {
-                  for (var j = 0; j < data.length && j < 10; j++) {
-                    element = createCardElement(data, j);
-
-                    fragment.appendChild(element);
-                  }
-                }
-              } else {
-                for (var j = 0; j < data.length && j < 12; j++) {
-                  element = createColumnElement(data, j);
-
-                  fragment.appendChild(element);
-                }
-              }
-
-            listCards.appendChild(fragment);
-
-            if (page === 'catalog') {
-              checkQuantityCatalogProduct(data, listCards, 'all');
-            }
+            autoToggleCatalogProduct(page, data, listCards);
             break;
           case 'pizza':
             sortCatalogProduct(page, data, listCards, 'pizza', 12);
@@ -709,8 +717,9 @@
         categoriesProducts[0].classList.add(activeState);
 
         addColumnsElements(data, container, 12);
+        checkQuantityCatalogProduct(data, container, 'all');
 
-        location.hash = 'filter=column'
+        location.hash = '#filter=column' + PAGE + '1';
       });
 
       btnFilterCards.addEventListener('click', function() {
@@ -737,8 +746,9 @@
         categoriesProducts[0].classList.add(activeState);
 
         addCardElements(data, container, 12);
+        checkQuantityCatalogProduct(data, container, 'all');
 
-        location.hash = 'filter=grid'
+       location.hash = '#filter=grid' + PAGE + '1';   
       });
     }
   }
@@ -755,8 +765,48 @@
 
     if (filter !== 'all') {
       textContainer.textContent = 'Показано ' + container.children.length + ' из ' + num + ' по результату запроса.';
+      showPaginators(data, paginatorsContainer, num);
     } else {
       textContainer.textContent = 'Показано ' + container.children.length + ' из ' + data.length + ' по результату запроса.';
+      showPaginators(data, paginatorsContainer, data.length);
+    }
+  }
+
+  function createPaginatorElement(currentItem) {
+    var paginator = document.createElement('a');
+    paginator.className = 'products__paginator-item';
+    paginator.href = location.hash + '?page=' + currentItem;
+    paginator.textContent = currentItem;
+
+    return paginator;
+  }
+
+  function showPaginators(data, paginatorsContainer, maxItem) {
+    var pageQuantity = Math.ceil(maxItem / 12);
+    var paginators;
+
+    paginatorsContainer.innerHTML = '';
+
+    if (maxItem > 0) {
+      for (var i = 1; i <= pageQuantity; i++) {
+        fragment.appendChild(createPaginatorElement(i));
+      }
+    } else {
+      fragment.appendChild(createPaginatorElement(1));
+    }
+
+    paginatorsContainer.appendChild(fragment);
+
+    paginators = document.querySelectorAll('.products__paginator-item');
+
+    // togglePage(paginators);
+  }
+
+  function togglePage(paginators) {
+    for (var i = 0; i < paginators.length; i++) {
+      paginators[i].addEventListener('click', function(evt) {
+        // location.href = evt.target.href;
+      });
     }
   }
 
@@ -772,7 +822,7 @@
         toggleFeaturedProduct(data, filtersFeaturedProducts, featuredProductContent);
         break;
       case '/catalog.html':
-        location.hash = '#filter=grid'
+        location.hash = '#filter=grid' + PAGE + '1';
 
         addCardElements(data, productCatalogContainer, 12);
         addTopRatingProduct(data, ratedProductList, 3);

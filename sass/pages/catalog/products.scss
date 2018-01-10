@@ -86,9 +86,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin-top: 60px;
+
+  @media #{$mobile} {
+    flex-direction: column;
+  }
 }
 
+.products__paginator-list {
+  display: flex;
+  flex-wrap: wrap;
+}
 .products__paginator-arrow {
   position: relative;
 
@@ -100,6 +109,7 @@
   background-color: transparent;
   border: 1px solid #d6d6d6;
   cursor: pointer;
+  transition: all .3s;
 
 
   #{&}::before {
@@ -115,7 +125,7 @@
   }
 
   #{&}:hover {
-    animation: rotatePaginatorArrow .6s;
+    border-color: $color-green;
   }
 
   #{&}--prev {
@@ -128,6 +138,11 @@
 
   #{&}--next {
     margin-left: 15px;
+  }
+
+  @media #{$mobile} {
+    margin: 5px 0;
+    width: 58px;
   }
 }
 

@@ -1,13 +1,3 @@
-@keyframes rotatePaginatorArrow {
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes showCartToggleBtn {
   0% {
     right: -7px;

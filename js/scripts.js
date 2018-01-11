@@ -329,7 +329,7 @@
       element.querySelector('.rating-product').href = PRODUCT_LINK + item.id;
       element.querySelector('.rating-product__img').src = item.photos[0];
       element.querySelector('.rating-product__name').textContent = item.title;
-      
+
       if (item.sale > 0 && typeof item.sale === 'number') {
         element.querySelector('.rating-product__price').innerHTML = '<span class="rating-product__sale">' + item.sale + '%</span>' +  item.price + CURRENY_RU;
       } else {
@@ -492,7 +492,7 @@
     }
 
     listCards.appendChild(fragment);
-    
+
     if (page === 'catalog') {
       checkQuantityCatalogProduct(data, listCards, currentFilter);
     }
@@ -515,7 +515,7 @@
   function autoToggleCatalogProduct(page, data, listCards) {
     listCards.innerHTML = '';
 
-    if (location.hash !== '#filter=column') { 
+    if (location.hash !== '#filter=column') {
       if (page === 'catalog') {
         // location.hash = '#filter=grid';
         for (var j = 0; j < data.length && j < 12; j++) {
@@ -624,11 +624,11 @@
       data.sort(function(a, b) {
 
         return Number(b.timeMS) - Number(a.timeMS);
-      }); 
+      });
     } else {
       data.sort(function(a, b) {
         return b[dataSet] - a[dataSet];
-      }); 
+      });
     }
 
     for (var k = 0; k < MAX_ITEMS; k++) {
@@ -748,24 +748,24 @@
         addCardElements(data, container, 12);
         checkQuantityCatalogProduct(data, container, 'all');
 
-       location.hash = '#filter=grid' + PAGE + '1';   
+       location.hash = '#filter=grid' + PAGE + '1';
       });
     }
   }
 
   function checkQuantityCatalogProduct(data, container, filter) {
     var textContainer = document.querySelector('.products__number-of');
-    var num = 0;
+    var itemsList = [];
 
     for (var i = 0; i < data.length; i++) {
       if (data[i].type === filter) {
-        num += 1;
+        itemsList.push(data[i]);
       }
     }
 
     if (filter !== 'all') {
-      textContainer.textContent = 'Показано ' + container.children.length + ' из ' + num + ' по результату запроса.';
-      showPaginators(data, paginatorsContainer, num);
+      textContainer.textContent = 'Показано ' + container.children.length + ' из ' + itemsList.length + ' по результату запроса.';
+      showPaginators(itemsList, paginatorsContainer, itemsList.length);
     } else {
       textContainer.textContent = 'Показано ' + container.children.length + ' из ' + data.length + ' по результату запроса.';
       showPaginators(data, paginatorsContainer, data.length);
@@ -774,8 +774,9 @@
 
   function createPaginatorElement(currentItem) {
     var paginator = document.createElement('a');
+    var hash = location.hash.split('?')[0];
     paginator.className = 'products__paginator-item';
-    paginator.href = location.hash + '?page=' + currentItem;
+    paginator.href = hash + '?page=' + currentItem;
     paginator.textContent = currentItem;
 
     return paginator;
@@ -799,15 +800,34 @@
 
     paginators = document.querySelectorAll('.products__paginator-item');
 
-    // togglePage(paginators);
+    togglePage(pageQuantity, paginators, data);
   }
 
-  function togglePage(paginators) {
+  function togglePage(pageQuantity, paginators, data) {
     for (var i = 0; i < paginators.length; i++) {
       paginators[i].addEventListener('click', function(evt) {
-        // location.href = evt.target.href;
+        showSelectPage(pageQuantity, evt.target.textContent, data);
       });
     }
+  }
+
+  function showSelectPage(pageQuantity, numPage, filteredData) {
+    var data = [];
+    var num = 0;
+
+    var pages = [];
+
+    for (var i = 0; i < filteredData.length; i++) {
+      data.push(filteredData[i]);
+    }
+
+    for (var i = 0; i < pageQuantity; i++) {
+      pages.push(data.splice(num, 12));
+      num+=12;
+      console.log(data);
+    }
+
+    console.log(pages);
   }
 
   xhr.addEventListener('load', function() {
@@ -826,7 +846,7 @@
 
         addCardElements(data, productCatalogContainer, 12);
         addTopRatingProduct(data, ratedProductList, 3);
-        showFinishedFilterProduct(data, productCatalogContainer); 
+        showFinishedFilterProduct(data, productCatalogContainer);
         toggleCatalogProduct('catalog', data, filtersCategoriesProducts, productCatalogContainer, toggleCatalogFilter);
         checkQuantityCatalogProduct(data, productCatalogContainer, 'all');
         break;

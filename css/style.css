@@ -1423,11 +1423,9 @@ body {
   .products__filter-btn--cards-active::before {
     background: transparent url("../img/grid-sprites.png") no-repeat;
     background-position: -32px 0; }
-  .products__filter-btn--columns {
-    display: none; }
-    .products__filter-btn--columns::before {
-      background: transparent url("../img/column-sprites.png") no-repeat;
-      background-position: 0 0; }
+  .products__filter-btn--columns::before {
+    background: transparent url("../img/column-sprites.png") no-repeat;
+    background-position: 0 0; }
   .products__filter-btn--columns-active::before {
     background: transparent url("../img/column-sprites.png") no-repeat;
     background-position: -32px 0; }

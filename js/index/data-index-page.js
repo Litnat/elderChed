@@ -18,15 +18,12 @@
 
   function setDefaultHash(currentHash, hash) {
     var collectionFilterItems = currentHash.split('?');
-    console.log(collectionFilterItems);
     var categoryFilter = collectionFilterItems[1];
     var ratingFilter = collectionFilterItems[2];
     var pageHash = collectionFilterItems[1];
     var categories;
 
     if (!pageHash && !categoryFilter && !ratingFilter) {
-      location.href = hash;
-    } else if (!collectionFilterItems[1].split('=')[1] || !collectionFilterItems[2].split('=')[1] || !collectionFilterItems[1].split('#')[1]) {
       location.href = hash;
     }
 
@@ -99,9 +96,19 @@
     }
   }
 
+  function toggleProductFilter(data, filtersButtons) {
+    for (var i = 0; i < filtersButtons.length; i++) {
+      filtersButtons[i].addEventListener('click', function() {
+        var hash = location.hash.split('?');
+        location.href = hash[0] + '?catagories=' + this.dataset.categoriesItem + '?' + hash[2];
+      });
+    }
+  }
+
   function showIndexPage(data) {
     setDefaultHash(location.hash, '#main?categories=all?rating=popular');
     getFilters(data, location.hash, filtersLatestProducts);
+    toggleProductFilter(data, filtersLatestProducts);
   }
 
   xhr.addEventListener('load', function() {
